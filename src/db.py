@@ -8,6 +8,8 @@ class Team(db.Model):
     img_url = db.Column(db.Text, nullable=True) # can we host images on Google Cloud? Probably.
     description = db.Column(db.Text, nullable=False)
     accomplishments = db.relationship('Accomplishment')
+    members = db.relationship('Member')
+    socials = db.relationship('Social')
 
     def __init__(self, **kwargs):
         self.name = kwargs.get('name')
