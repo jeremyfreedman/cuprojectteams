@@ -26,7 +26,7 @@ class Team(db.Model):
 
 class Accomplishment(db.Model):
     __tablename__ = "accomplishments" # projects and awards together?
-    team = db.Column(db.Text, db.ForeignKey("team.name"), nullable=False) # index projects by team name
+    team = db.Column(db.Text, db.ForeignKey("team.name"), primary_key=True, nullable=False) # index projects by team name
     acc_name = db.Column(db.Text, nullable=False)
     acc_year = db.Column(db.Integer, nullable=False)
     acc_desc = db.Column(db.Text, nullable=True)
@@ -49,15 +49,16 @@ class Accomplishment(db.Model):
 
 class Member(db.Model):
     __tablename__ = "members"
-    team = db.Column(db.Text, db.ForeignKey('team.name'), nullable=False) # same deal as Project.team
+    team = db.Column(db.Text, db.ForeignKey('team.name'), primary_key=True, nullable=False) # same deal as Project.team
     member_name = db.Column(db.Text, nullable=False)
     member_img_url = db.Column(db.Text, nullable=True) # might be unfeasible to have pictures of these
+    member_comment = db.Column(db.Text, nullable=True)
     # any other info we can think of?
 
 
 class Social(db.Model):
     __tablename__ = "connect"
-    team = db.Column(db.Text, db.ForeignKey('team.name'), nullable=False)
+    team = db.Column(db.Text, db.ForeignKey('team.name'), primary_key=True, nullable=False)
     facebook = db.Column(db.Text)
     twitter = db.Column(db.Text)
     instagram = db.Column(db.Text) # app targets to open links in-app? possible?

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		358D4D4A21A72AA700ADB0AA /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358D4D4721A72AA700ADB0AA /* Team.swift */; };
+		358D4D4B21A72AA700ADB0AA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358D4D4821A72AA700ADB0AA /* Extensions.swift */; };
+		358D4D4C21A72AA700ADB0AA /* TeamsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358D4D4921A72AA700ADB0AA /* TeamsCollectionViewCell.swift */; };
 		35A7525D21A65D39009F6171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A7525C21A65D39009F6171 /* AppDelegate.swift */; };
 		35A7525F21A65D39009F6171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A7525E21A65D39009F6171 /* ViewController.swift */; };
 		35A7526221A65D39009F6171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A7526021A65D39009F6171 /* Main.storyboard */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		358D4D4721A72AA700ADB0AA /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Team.swift; path = ../../../../HELP/cuprojectteams/src/ProjectTeams/ProjectTeams/Team.swift; sourceTree = "<group>"; };
+		358D4D4821A72AA700ADB0AA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../../../HELP/cuprojectteams/src/ProjectTeams/ProjectTeams/Extensions.swift; sourceTree = "<group>"; };
+		358D4D4921A72AA700ADB0AA /* TeamsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamsCollectionViewCell.swift; path = ../../../../HELP/cuprojectteams/src/ProjectTeams/ProjectTeams/TeamsCollectionViewCell.swift; sourceTree = "<group>"; };
 		35A7525921A65D39009F6171 /* ProjectTeams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectTeams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A7525C21A65D39009F6171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35A7525E21A65D39009F6171 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +62,9 @@
 		35A7525B21A65D39009F6171 /* ProjectTeams */ = {
 			isa = PBXGroup;
 			children = (
+				358D4D4821A72AA700ADB0AA /* Extensions.swift */,
+				358D4D4721A72AA700ADB0AA /* Team.swift */,
+				358D4D4921A72AA700ADB0AA /* TeamsCollectionViewCell.swift */,
 				35A7525C21A65D39009F6171 /* AppDelegate.swift */,
 				35A7526E21A65E44009F6171 /* AppDevViewController.swift */,
 				35A7525E21A65D39009F6171 /* ViewController.swift */,
@@ -138,7 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				358D4D4B21A72AA700ADB0AA /* Extensions.swift in Sources */,
+				358D4D4A21A72AA700ADB0AA /* Team.swift in Sources */,
 				35A7526F21A65E44009F6171 /* AppDevViewController.swift in Sources */,
+				358D4D4C21A72AA700ADB0AA /* TeamsCollectionViewCell.swift in Sources */,
 				35A7525F21A65D39009F6171 /* ViewController.swift in Sources */,
 				35A7525D21A65D39009F6171 /* AppDelegate.swift in Sources */,
 			);
