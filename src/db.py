@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 class Team(db.Model):
-    __tablename__ = "teams"
+    __tablename__ = "team"
     name = db.Column(db.Text, primary_key=True)
     img_url = db.Column(db.Text, nullable=True) # can we host images on Google Cloud? Probably.
     description = db.Column(db.Text, nullable=False)
@@ -25,7 +25,7 @@ class Team(db.Model):
 
 
 class Accomplishment(db.Model):
-    __tablename__ = "accomplishments" # projects and awards together?
+    __tablename__ = "accomplishment" # projects and awards together?
     team = db.Column(db.Text, db.ForeignKey("team.name"), primary_key=True, nullable=False) # index projects by team name
     acc_name = db.Column(db.Text, nullable=False)
     acc_year = db.Column(db.Integer, nullable=False)
@@ -48,7 +48,7 @@ class Accomplishment(db.Model):
 
 
 class Member(db.Model):
-    __tablename__ = "members"
+    __tablename__ = "member"
     team = db.Column(db.Text, db.ForeignKey('team.name'), primary_key=True, nullable=False) # same deal as Project.team
     member_name = db.Column(db.Text, nullable=False)
     member_img_url = db.Column(db.Text, nullable=True) # might be unfeasible to have pictures of these
