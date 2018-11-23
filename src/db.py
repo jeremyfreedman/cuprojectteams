@@ -51,13 +51,20 @@ class Member(db.Model):
     __tablename__ = "member"
     team = db.Column(db.Text, db.ForeignKey('team.name'), primary_key=True, nullable=False) # same deal as Project.team
     member_name = db.Column(db.Text, nullable=False)
-    member_img_url = db.Column(db.Text, nullable=True) # might be unfeasible to have pictures of these
     member_comment = db.Column(db.Text, nullable=True)
+    member_img_url = db.Column(db.Text, nullable=True) # might be unfeasible to have pictures of these
     # any other info we can think of?
+
+    def serialize(self):
+        return {
+            'name': self.member_name,
+            'comment': self.member_comment,
+            'img_url': self.member_img_url
+        }
 
 
 class Social(db.Model):
-    __tablename__ = "connect"
+    __tablename__ = "social"
     team = db.Column(db.Text, db.ForeignKey('team.name'), primary_key=True, nullable=False)
     facebook = db.Column(db.Text)
     twitter = db.Column(db.Text)
@@ -66,3 +73,13 @@ class Social(db.Model):
     git = db.Column(db.Text) 
     email = db.Column(db.Text) # use mailto:
     # any other links we can think of?
+
+    def serialize(self):
+        return {
+            'facebook': self.facebook,
+            'twitter': self.twitter,
+            'instagram': self.instagram,
+            'website': self.website,
+            'git': self.git,
+            'email': self.email
+        }

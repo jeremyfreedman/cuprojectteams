@@ -31,10 +31,25 @@ def get_summary(teamname):
 def get_accomplishments(teamname):
     team = Team.query.filter_by(name=teamname).first()
     if team is not None:
-        accomplishments = [accomplishments.serialize()]
+        accomplishments = [accomplishment.serialize() for accomplishment in accomplishments]
         return json.dumps({'success': True, 'data': accomplishments}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
 
+@app.route('/api/team/<string:teamname>/members/')
+def get_members(teamname):
+    team = Team.query.filter_by(name=teamname).first()
+    if team is not None:
+        members = [member.serialize() for member in members]
+        return json.dumps({'success': True, 'data': members}), 200
+    return json.dumps({'success': False, 'error': 'Team not found!'}), 404
+
+@app.route('/api/team/<string:teamname>/socials/')
+def get_socials(teamname):
+    team = Team.query.filter_by(name=teamname).first()
+    if team is not None:
+        socials = [social.serialize() for social in socials]
+        return json.dumps({'success': True, 'data': socials}), 200
+    return json.dumps({'success': False, 'error': 'Team not found!'}), 404
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
 #todo: members, socials
