@@ -26,7 +26,8 @@ class Team(db.Model):
 
 class Accomplishment(db.Model):
     __tablename__ = "accomplishment" # projects and awards together?
-    team = db.Column(db.Text, db.ForeignKey("team.name"), primary_key=True, nullable=False) # index projects by team name
+    acc_id = db.Column(db.Integer, primary_key=True)
+    team = db.Column(db.Text, db.ForeignKey("team.name"), nullable=False) # index projects by team name
     acc_name = db.Column(db.Text, nullable=False)
     acc_year = db.Column(db.Integer, nullable=False)
     acc_desc = db.Column(db.Text, nullable=True)
@@ -49,11 +50,17 @@ class Accomplishment(db.Model):
 
 class Member(db.Model):
     __tablename__ = "member"
-    team = db.Column(db.Text, db.ForeignKey('team.name'), primary_key=True, nullable=False) # same deal as Project.team
+    member_id = db.Column(db.Integer, primary_key=True)
+    team = db.Column(db.Text, db.ForeignKey('team.name'), nullable=False) # same deal as Project.team
     member_name = db.Column(db.Text, nullable=False)
     member_comment = db.Column(db.Text, nullable=True)
     member_img_url = db.Column(db.Text, nullable=True) # might be unfeasible to have pictures of these
     # any other info we can think of?
+
+    def __init__(self, **kwargs):
+        self.member_name = kwargs.get('member_name')
+        self.member_comment = kwargs.get('member_comment')
+        self.member_img_url = kwargs.get('member_img_url')
 
     def serialize(self):
         return {
@@ -65,7 +72,8 @@ class Member(db.Model):
 
 class Social(db.Model):
     __tablename__ = "social"
-    team = db.Column(db.Text, db.ForeignKey('team.name'), primary_key=True, nullable=False)
+    social_id = db.Column(db.Integer, primary_key=True)
+    team = db.Column(db.Text, db.ForeignKey('team.name'), nullable=False)
     facebook = db.Column(db.Text)
     twitter = db.Column(db.Text)
     instagram = db.Column(db.Text) # app targets to open links in-app? possible?
@@ -73,6 +81,14 @@ class Social(db.Model):
     git = db.Column(db.Text) 
     email = db.Column(db.Text) # use mailto:
     # any other links we can think of?
+
+    def __init__(self, **kwargs):
+        self.facebook = kwargs.get('facebook')
+        self.twitter = kwargs.get('twitter')
+        self.instagram = kwargs.get('instagram')
+        self.website = kwargs.get('website')
+        self.git = kwargs.get('git')
+        self.email = kwargs.get('email')
 
     def serialize(self):
         return {
