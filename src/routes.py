@@ -23,15 +23,16 @@ def get_teams():
 @app.route('/api/team/', methods=['POST'])
 def add_team():
     response = json.loads(request.data)
-    team = Team(
-        name = response.get('name'),
-        img_url = response.get('img_url'),
-        description = response.get('description')
-    )
-    print(team.serialize())
-    db.session.add(team)
-    db.session.commit()
-    return json.dumps({'success': True, 'data': team.serialize()}), 201
+    if Team.query.filter_by(name=response.get('name')) is None:
+        team = Team(
+            name = response.get('name'),
+            img_url = response.get('img_url'),
+            description = response.get('description')
+        )
+        db.session.add(team)
+        db.session.commit()
+        return json.dumps({'success': True, 'data': team.serialize()}), 201
+    return json.dumps({'success': False, 'error': 'Team already exists!'}), 409
 
 @app.route('/api/team/<string:teamname>/summary/')
 def get_summary(teamname):
