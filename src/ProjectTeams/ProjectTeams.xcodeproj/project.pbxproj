@@ -62,12 +62,12 @@
 		35A7525B21A65D39009F6171 /* ProjectTeams */ = {
 			isa = PBXGroup;
 			children = (
-				358D4D4821A72AA700ADB0AA /* Extensions.swift */,
+				35A7525C21A65D39009F6171 /* AppDelegate.swift */,
 				358D4D4721A72AA700ADB0AA /* Team.swift */,
 				358D4D4921A72AA700ADB0AA /* TeamsCollectionViewCell.swift */,
-				35A7525C21A65D39009F6171 /* AppDelegate.swift */,
 				35A7526E21A65E44009F6171 /* AppDevViewController.swift */,
 				35A7525E21A65D39009F6171 /* ViewController.swift */,
+				358D4D4821A72AA700ADB0AA /* Extensions.swift */,
 				35A7526021A65D39009F6171 /* Main.storyboard */,
 				35A7526321A65D3A009F6171 /* Assets.xcassets */,
 				35A7526521A65D3A009F6171 /* LaunchScreen.storyboard */,
