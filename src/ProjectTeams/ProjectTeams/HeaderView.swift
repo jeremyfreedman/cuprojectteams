@@ -7,21 +7,32 @@
 //
 
 import UIKit
+import SnapKit
 
 class HeaderView: UICollectionReusableView/* UICollectionViewCell*/ {
-    
-    var headerImage: UIImage!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    override func updateConstraints() {
-        super.updateConstraints()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+        var header: UILabel!
+        //var didSetupShadow = false
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            backgroundColor = .white
+
+            header = UILabel()
+            header.textColor = .black
+            header.text = "Project Teams"
+            addSubview(header)
+            
+            setup()
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+        func setup() {
+            header.snp.makeConstraints { make in
+                make.bottom.equalToSuperview().inset(20)
+                make.leading.equalTo(24)
+                make.trailing.lessThanOrEqualToSuperview().inset(24)
+            }
+        }
 }

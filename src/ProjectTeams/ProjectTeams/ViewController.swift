@@ -7,13 +7,14 @@
 //
 
 import UIKit
-
+import SnapKit
 
 class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let teamCell = "teamCell"
     let filterCell = "filterCell"
     let headerView = "headerView"
+    var headerView2: HeaderView!
     let filterReuseIdentifier = "filterReuseIdentifier"
     let headerReuseIdentifier = "headerReuseIdentifier"
     let headerHeight: CGFloat = 30
@@ -62,6 +63,25 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+//        headerView2 = HeaderView()
+//        headerView2.layer.shadowOffset = CGSize(width: 0.0, height: 9.0)
+//        headerView2.layer.shadowOpacity = 0.25
+//        headerView2.layer.masksToBounds = false
+//
+//        view.addSubview(headerView2)
+//        headerView2.snp.makeConstraints { make in
+//            make.leading.trailing.top.equalTo(view)
+//            make.height.equalTo(120)
+//        }
+//        collectionView.snp.makeConstraints {make in
+//            make.top.equalTo(headerView2.snp.bottom).offset(12)
+//            make.centerX.width.bottom.equalToSuperview()
+//        }
+//
+        
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         let layout = UICollectionViewFlowLayout()
@@ -77,6 +97,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView?.delegate = self
         collectionView?.refreshControl = refreshControl
         
+        self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 0.0)
         navigationItem.title = "Project Teams"
         navigationController?.navigationBar.barTintColor = .white
         
@@ -102,10 +123,11 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         scrollView.addSubview(collectionViewB)
         //collectionViewB.register(HeaderView.self, forCellWithReuseIdentifier: headerView)     // SIGBART
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier)
-        collectionViewB.canCancelContentTouches = true;       
+        collectionViewB.canCancelContentTouches = true;
         
         self.view.addSubview(collectionView)
         self.view.addSubview(collectionViewB)
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
