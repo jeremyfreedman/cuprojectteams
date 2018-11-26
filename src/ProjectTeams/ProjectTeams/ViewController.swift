@@ -102,13 +102,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         scrollView.addSubview(collectionViewB)
         //collectionViewB.register(HeaderView.self, forCellWithReuseIdentifier: headerView)     // SIGBART
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier)
-        //collectionViewB.canCancelContentTouches = true;
-        
-        // var tap = UITapGestureRecognizer(target: self, action : "handleTap:")
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(sender:)))
-        tap.numberOfTapsRequired = 1
-        self.collectionView.addGestureRecognizer(tap)
-        
+        collectionViewB.canCancelContentTouches = true;       
         
         self.view.addSubview(collectionView)
         self.view.addSubview(collectionViewB)
@@ -121,6 +115,11 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: teamCell, for: indexPath) as! TeamsCollectionViewCell
         cell.team = teams[indexPath.item]
+        
+        // Handle Tap
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(sender:)))
+        tap.numberOfTapsRequired = 1
+        cell.addGestureRecognizer(tap)
         return cell
     }
     
@@ -158,7 +157,6 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
-        //print("called swipe")
         let appDevViewController = AppDevViewController()
         navigationController?.pushViewController(appDevViewController, animated: true)
     }
