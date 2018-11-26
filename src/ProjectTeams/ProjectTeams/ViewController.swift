@@ -20,6 +20,8 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     var refreshControl: UIRefreshControl!
     let filterBarHeight: CGFloat = 30
     
+    var vc2 = AppDevViewController()
+    
     let teams = [Team(image: "appdev", name: "Cornell AppDev", type: "type"),
                        Team(image: "", name: "AguaClara", type: "type"),
                        Team(image: "", name: "Big Red Bridges", type: "type"),
@@ -57,8 +59,11 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return v
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         let layout = UICollectionViewFlowLayout()
         
         // scrollDirection can be vertical or horizontal
@@ -99,6 +104,12 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier)
         //collectionViewB.canCancelContentTouches = true;
         
+        // var tap = UITapGestureRecognizer(target: self, action : "handleTap:")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(sender:)))
+        tap.numberOfTapsRequired = 1
+        self.collectionView.addGestureRecognizer(tap)
+        
+        
         self.view.addSubview(collectionView)
         self.view.addSubview(collectionViewB)
     }
@@ -124,6 +135,13 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier, for: indexPath)
         headerView.setNeedsUpdateConstraints()
+        
+//        //
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: teamCell, for: indexPath) as! TeamsCollectionViewCell
+//        headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleCellSelected(sender:))))
+//        //return cell
+        
+        
         return headerView
     }
     
@@ -138,5 +156,16 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
             self.refreshControl.endRefreshing()
         }
     }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        //print("called swipe")
+        let appDevViewController = AppDevViewController()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+    }
+    
+//    @objc func handleCellSelected(sender: UITapGestureRecognizer){
+//        let cell = sender.view as! TeamsCollectionViewCell
+//        let indexPath = collectionView?.indexPath(for: cell)
+//    }
 
 }

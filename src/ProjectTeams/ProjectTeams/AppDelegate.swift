@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let layout = UICollectionViewFlowLayout()
         let mainVC = ViewController(collectionViewLayout: layout)
+        //let navigationController = UINavigationController(rootViewController: ViewController())
         window?.rootViewController = UINavigationController(rootViewController: mainVC)
         
         return true
