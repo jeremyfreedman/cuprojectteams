@@ -11,3 +11,4 @@ import Foundation
 struct Filter {
     let name: String?
 }
+
