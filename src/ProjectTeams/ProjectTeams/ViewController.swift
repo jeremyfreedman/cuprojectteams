@@ -78,7 +78,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black,
                                                                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
         
-        collectionView?.register(TeamCell.self, forCellWithReuseIdentifier: teamCell)
+        collectionView?.register(TeamsCollectionViewCell.self, forCellWithReuseIdentifier: teamCell)
         
         
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier)
@@ -108,7 +108,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: teamCell, for: indexPath) as! TeamCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: teamCell, for: indexPath) as! TeamsCollectionViewCell
         cell.team = teams[indexPath.item]
         return cell
     }
