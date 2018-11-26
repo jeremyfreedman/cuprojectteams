@@ -18,7 +18,7 @@
 		35A7526221A65D39009F6171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A7526021A65D39009F6171 /* Main.storyboard */; };
 		35A7526421A65D3A009F6171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A7526321A65D3A009F6171 /* Assets.xcassets */; };
 		35A7526721A65D3A009F6171 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A7526521A65D3A009F6171 /* LaunchScreen.storyboard */; };
-		35A7526F21A65E44009F6171 /* AppDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A7526E21A65E44009F6171 /* AppDevViewController.swift */; };
+		35A7526F21A65E44009F6171 /* ProjectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A7526E21A65E44009F6171 /* ProjectTeamViewController.swift */; };
 		FE922CEDC38B11F4179BAF35 /* Pods_ProjectTeams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA05A9F21A3C2FE27244F04 /* Pods_ProjectTeams.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		35A7526321A65D3A009F6171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35A7526621A65D3A009F6171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35A7526821A65D3A009F6171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		35A7526E21A65E44009F6171 /* AppDevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDevViewController.swift; sourceTree = "<group>"; };
+		35A7526E21A65E44009F6171 /* ProjectTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamViewController.swift; sourceTree = "<group>"; };
 		6617FB2B8EBF3E801C4D2A5F /* Pods-ProjectTeams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTeams.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTeams/Pods-ProjectTeams.release.xcconfig"; sourceTree = "<group>"; };
 		6FA05A9F21A3C2FE27244F04 /* Pods_ProjectTeams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectTeams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3446DB27974DE5C95116ED /* Pods-ProjectTeams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTeams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTeams/Pods-ProjectTeams.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 				3577068721ABBA96005543A9 /* Filter.swift */,
 				358D4D4721A72AA700ADB0AA /* Team.swift */,
 				358D4D4821A72AA700ADB0AA /* Extensions.swift */,
-				35A7526E21A65E44009F6171 /* AppDevViewController.swift */,
+				35A7526E21A65E44009F6171 /* ProjectTeamViewController.swift */,
 				35A7526021A65D39009F6171 /* Main.storyboard */,
 				35A7526321A65D3A009F6171 /* Assets.xcassets */,
 				35A7526521A65D3A009F6171 /* LaunchScreen.storyboard */,
@@ -233,7 +233,7 @@
 			files = (
 				358D4D4B21A72AA700ADB0AA /* Extensions.swift in Sources */,
 				358D4D4A21A72AA700ADB0AA /* Team.swift in Sources */,
-				35A7526F21A65E44009F6171 /* AppDevViewController.swift in Sources */,
+				35A7526F21A65E44009F6171 /* ProjectTeamViewController.swift in Sources */,
 				358D4D4C21A72AA700ADB0AA /* TeamsCollectionViewCell.swift in Sources */,
 				35A7525F21A65D39009F6171 /* ViewController.swift in Sources */,
 				35A7525D21A65D39009F6171 /* AppDelegate.swift in Sources */,

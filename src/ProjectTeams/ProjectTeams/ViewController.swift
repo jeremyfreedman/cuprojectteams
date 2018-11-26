@@ -21,7 +21,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     var refreshControl: UIRefreshControl!
     let filterBarHeight: CGFloat = 30
     
-    var vc2 = AppDevViewController()
+    var vc2 = ProjectTeamViewController()
     
     let teams = [Team(image: "appdev", name: "Cornell AppDev", type: "type"),
                        Team(image: "", name: "AguaClara", type: "type"),
@@ -34,7 +34,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
                        Team(image: "", name: "Cornell Data Science", type: "type"),
                        Team(image: "", name: "Cornell Design & Tech Initiative", type: "type"),
                        Team(image: "", name: "Cornell Engineering World Health", type: "type"),
-                       Team(image: "", name: "Cornell Genetically Engineered Machines", type: "type"),
+                       Team(image: "", name: "CGEM", type: "type"),
                        Team(image: "", name: "Cornell Hyperloop", type: "type"),
                        Team(image: "", name: "Cornell Mars Rover", type: "type"),
                        Team(image: "", name: "Cornell Micro-g", type: "type"),
@@ -48,7 +48,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
                        Team(image: "", name: "CU Sail", type: "type"),
                        Team(image: "", name: "CU Solar Boat", type: "type"),
                        Team(image: "", name: "Design Build Fly", type: "type"),
-                       Team(image: "", name: "Engineers for a Sustainable World: Biofuels", type: "type"),
+                       Team(image: "", name: "Engineers for a Sustainable World", type: "type"),
                        Team(image: "", name: "Engineers Without Borders", type: "type"),
                        Team(image: "", name: "Resistance Racing", type: "type"),
                        Team(image: "", name: "Steel Bridge", type: "type")]
@@ -179,7 +179,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
-        let appDevViewController = AppDevViewController()
+        let appDevViewController = ProjectTeamViewController()
         navigationController?.pushViewController(appDevViewController, animated: true)
     }
     

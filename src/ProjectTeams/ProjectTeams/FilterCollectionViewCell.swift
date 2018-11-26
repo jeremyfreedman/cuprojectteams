@@ -28,7 +28,7 @@ class FilterCell: UICollectionViewCell {
         
         self.addSubview(FilterNameLabel)
         
-        FilterNameLabel.anchor(top: filterImageView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: -30, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        FilterNameLabel.anchor(top: filterImageView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
     
     let filterImageView: UIImageView = {

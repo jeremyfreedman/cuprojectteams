@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppDevViewController: UIViewController {
+class ProjectTeamViewController: UIViewController {
     var blueView: UIView!
     var textField: UITextField!
     var button: UIButton!

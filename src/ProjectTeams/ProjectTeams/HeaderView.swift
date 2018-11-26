@@ -18,7 +18,7 @@ class HeaderView: UICollectionReusableView/* UICollectionViewCell*/ {
 
             header = UILabel()
             header.textColor = .black
-            header.text = "Project Teams"
+            header.text = "get rid of this"
             addSubview(header)
             
             setup()
