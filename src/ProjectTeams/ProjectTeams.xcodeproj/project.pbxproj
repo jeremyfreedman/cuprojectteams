@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3577068421ABBA3A005543A9 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3577068321ABBA3A005543A9 /* FilterCollectionViewCell.swift */; };
+		3577068621ABBA75005543A9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3577068521ABBA75005543A9 /* HeaderView.swift */; };
+		3577068821ABBA96005543A9 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3577068721ABBA96005543A9 /* Filter.swift */; };
 		358D4D4A21A72AA700ADB0AA /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358D4D4721A72AA700ADB0AA /* Team.swift */; };
 		358D4D4B21A72AA700ADB0AA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358D4D4821A72AA700ADB0AA /* Extensions.swift */; };
 		358D4D4C21A72AA700ADB0AA /* TeamsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358D4D4921A72AA700ADB0AA /* TeamsCollectionViewCell.swift */; };
@@ -15,10 +18,14 @@
 		35A7526221A65D39009F6171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A7526021A65D39009F6171 /* Main.storyboard */; };
 		35A7526421A65D3A009F6171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A7526321A65D3A009F6171 /* Assets.xcassets */; };
 		35A7526721A65D3A009F6171 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A7526521A65D3A009F6171 /* LaunchScreen.storyboard */; };
-		35A7526F21A65E44009F6171 /* AppDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A7526E21A65E44009F6171 /* AppDevViewController.swift */; };
+		35A7526F21A65E44009F6171 /* ProjectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A7526E21A65E44009F6171 /* ProjectTeamViewController.swift */; };
+		FE922CEDC38B11F4179BAF35 /* Pods_ProjectTeams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA05A9F21A3C2FE27244F04 /* Pods_ProjectTeams.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3577068321ABBA3A005543A9 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		3577068521ABBA75005543A9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		3577068721ABBA96005543A9 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		358D4D4721A72AA700ADB0AA /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Team.swift; path = ../../../../HELP/cuprojectteams/src/ProjectTeams/ProjectTeams/Team.swift; sourceTree = "<group>"; };
 		358D4D4821A72AA700ADB0AA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../../../HELP/cuprojectteams/src/ProjectTeams/ProjectTeams/Extensions.swift; sourceTree = "<group>"; };
 		358D4D4921A72AA700ADB0AA /* TeamsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamsCollectionViewCell.swift; path = ../../../../HELP/cuprojectteams/src/ProjectTeams/ProjectTeams/TeamsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -29,7 +36,10 @@
 		35A7526321A65D3A009F6171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35A7526621A65D3A009F6171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35A7526821A65D3A009F6171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		35A7526E21A65E44009F6171 /* AppDevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDevViewController.swift; sourceTree = "<group>"; };
+		35A7526E21A65E44009F6171 /* ProjectTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamViewController.swift; sourceTree = "<group>"; };
+		6617FB2B8EBF3E801C4D2A5F /* Pods-ProjectTeams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTeams.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTeams/Pods-ProjectTeams.release.xcconfig"; sourceTree = "<group>"; };
+		6FA05A9F21A3C2FE27244F04 /* Pods_ProjectTeams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectTeams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB3446DB27974DE5C95116ED /* Pods-ProjectTeams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTeams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTeams/Pods-ProjectTeams.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE922CEDC38B11F4179BAF35 /* Pods_ProjectTeams.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +59,8 @@
 			children = (
 				35A7525B21A65D39009F6171 /* ProjectTeams */,
 				35A7525A21A65D39009F6171 /* Products */,
+				4AA6AAD35B9E4DB9617A30BD /* Pods */,
+				7FE0591FB23C8B823CC90B9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,18 +75,38 @@
 		35A7525B21A65D39009F6171 /* ProjectTeams */ = {
 			isa = PBXGroup;
 			children = (
-				358D4D4821A72AA700ADB0AA /* Extensions.swift */,
-				358D4D4721A72AA700ADB0AA /* Team.swift */,
-				358D4D4921A72AA700ADB0AA /* TeamsCollectionViewCell.swift */,
 				35A7525C21A65D39009F6171 /* AppDelegate.swift */,
-				35A7526E21A65E44009F6171 /* AppDevViewController.swift */,
 				35A7525E21A65D39009F6171 /* ViewController.swift */,
+				358D4D4921A72AA700ADB0AA /* TeamsCollectionViewCell.swift */,
+				3577068321ABBA3A005543A9 /* FilterCollectionViewCell.swift */,
+				3577068521ABBA75005543A9 /* HeaderView.swift */,
+				3577068721ABBA96005543A9 /* Filter.swift */,
+				358D4D4721A72AA700ADB0AA /* Team.swift */,
+				358D4D4821A72AA700ADB0AA /* Extensions.swift */,
+				35A7526E21A65E44009F6171 /* ProjectTeamViewController.swift */,
 				35A7526021A65D39009F6171 /* Main.storyboard */,
 				35A7526321A65D3A009F6171 /* Assets.xcassets */,
 				35A7526521A65D3A009F6171 /* LaunchScreen.storyboard */,
 				35A7526821A65D3A009F6171 /* Info.plist */,
 			);
 			path = ProjectTeams;
+			sourceTree = "<group>";
+		};
+		4AA6AAD35B9E4DB9617A30BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB3446DB27974DE5C95116ED /* Pods-ProjectTeams.debug.xcconfig */,
+				6617FB2B8EBF3E801C4D2A5F /* Pods-ProjectTeams.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7FE0591FB23C8B823CC90B9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FA05A9F21A3C2FE27244F04 /* Pods_ProjectTeams.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35A7526B21A65D3A009F6171 /* Build configuration list for PBXNativeTarget "ProjectTeams" */;
 			buildPhases = (
+				FC5C385E785B5482F77CF637 /* [CP] Check Pods Manifest.lock */,
 				35A7525521A65D39009F6171 /* Sources */,
 				35A7525621A65D39009F6171 /* Frameworks */,
 				35A7525721A65D39009F6171 /* Resources */,
+				CDB7504EF5B6849E1324777C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,6 +177,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CDB7504EF5B6849E1324777C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ProjectTeams/Pods-ProjectTeams-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectTeams/Pods-ProjectTeams-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC5C385E785B5482F77CF637 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProjectTeams-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		35A7525521A65D39009F6171 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -149,10 +233,13 @@
 			files = (
 				358D4D4B21A72AA700ADB0AA /* Extensions.swift in Sources */,
 				358D4D4A21A72AA700ADB0AA /* Team.swift in Sources */,
-				35A7526F21A65E44009F6171 /* AppDevViewController.swift in Sources */,
+				35A7526F21A65E44009F6171 /* ProjectTeamViewController.swift in Sources */,
 				358D4D4C21A72AA700ADB0AA /* TeamsCollectionViewCell.swift in Sources */,
 				35A7525F21A65D39009F6171 /* ViewController.swift in Sources */,
 				35A7525D21A65D39009F6171 /* AppDelegate.swift in Sources */,
+				3577068421ABBA3A005543A9 /* FilterCollectionViewCell.swift in Sources */,
+				3577068821ABBA96005543A9 /* Filter.swift in Sources */,
+				3577068621ABBA75005543A9 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +383,7 @@
 		};
 		35A7526C21A65D3A009F6171 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB3446DB27974DE5C95116ED /* Pods-ProjectTeams.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -313,6 +401,7 @@
 		};
 		35A7526D21A65D3A009F6171 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6617FB2B8EBF3E801C4D2A5F /* Pods-ProjectTeams.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

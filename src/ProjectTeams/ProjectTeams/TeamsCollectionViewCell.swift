@@ -34,12 +34,25 @@ class TeamsCollectionViewCell: UICollectionViewCell {
         self.addSubview(TeamNameLabel)
         self.addSubview(TeamTypeLabel)
         
-        // EDIT THE DIMENSIONS
-//       teamImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: -5, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: 100, height: 200)
-//
-//        TeamNameLabel.anchor(top: teamImageView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: -30, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-//
-//        TeamTypeLabel.anchor(top: teamImageView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 25, paddingLeft: -80, paddingBottom: 0, paddingRight: 0)
+        self.layer.cornerRadius = 10.0
+        self.contentView.layer.cornerRadius = 10.0
+        self.contentView.layer.borderWidth = 1.0
+        self.contentView.layer.borderColor = UIColor.clear.cgColor
+        self.contentView.layer.masksToBounds = true
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 0.5
+        self.layer.masksToBounds = false
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+        
+        
+       teamImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: -5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 100, height: 150)
+
+        TeamNameLabel.anchor(top: teamImageView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: -30, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+
+        TeamTypeLabel.anchor(top: teamImageView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 25, paddingLeft: -80, paddingBottom: 0, paddingRight: 0)
     }
     
     let teamImageView: UIImageView = {
@@ -61,7 +74,7 @@ class TeamsCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Type"
         label.textColor = UIColor(hue: 0.1333, saturation: 0, brightness: 0.52, alpha: 1.0)
-        label.font = UIFont.boldSystemFont(ofSize: 12)
+        label.font = UIFont.boldSystemFont(ofSize: 48)
         label.textAlignment = .center
         return label
     }()
