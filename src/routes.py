@@ -47,17 +47,16 @@ def add_accomplishment(teamname):
     team = Team.query.filter_by(name=teamname).first()
     if not team is None:
         accomplishment = Accomplishment(
-            name = response.get('acc_name'),
-            year = response.get('acc_year'),
-            description = response.get('acc_desc'),
-            acc_img_url = response.get('acc_img_url')
+            name = response.get('name'),
+            year = response.get('year'),
+            description = response.get('description'),
+            img_url = response.get('img_url')
         )
         team.accomplishments.append(accomplishment)
         db.session.add(accomplishment)
         db.session.commit()
         return json.dumps({'success': True, 'data': accomplishment.serialize()}), 201
-    return json.dumps({'success': False, 'data': 'Team not found!'}), 404
-
+    return json.dumps({'success': False, 'data': 'Team not found!'}), 404    
 
 @app.route('/api/team/<string:teamname>/accomplishments/')
 def get_accomplishments(teamname):
@@ -67,19 +66,54 @@ def get_accomplishments(teamname):
         return json.dumps({'success': True, 'data': accomplishments}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
 
+@app.route('/api/team/<string:teamname>/member/', methods=['POST'])
+def add_member(teamname):
+    response = json.loads(request.data)
+    team = Team.query.filter_by(name=teamname).first()
+    if not team is None:
+        member = Member(
+            name = response.get('name'),
+            comment = response.get('comment'),
+            img_url = response.get('img_url'),
+        )
+        team.members.append(member)
+        db.session.add(member)
+        db.session.commit()
+        return json.dumps({'success': True, 'data': member.serialize()}), 201
+    return json.dumps({'success': False, 'data': 'Team not found!'}), 404
+
 @app.route('/api/team/<string:teamname>/members/')
 def get_members(teamname):
     team = Team.query.filter_by(name=teamname).first()
     if team is not None:
-        members = [member.serialize() for member in members]
+        members = [member.serialize() for member in team.members]
         return json.dumps({'success': True, 'data': members}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
+
+@app.route('/api/team/<string:teamname>/social/', methods=['POST'])
+def add_social(teamname):
+    response = json.loads(request.data)
+    team = Team.query.filter_by(name=teamname).first()
+    if not team is None:
+        social = Social(
+            facebook = response.get('facebook'),
+            twitter = response.get('twitter'),
+            instagram = response.get('instagram'),
+            website = response.get('website'),
+            git = response.get('git'),
+            email = response.get('email')
+        )
+        team.socials.append(social)
+        db.session.add(social)
+        db.session.commit()
+        return json.dumps({'success': True, 'data': social.serialize()}), 201
+    return json.dumps({'success': False, 'data': 'Team not found!'}), 404
 
 @app.route('/api/team/<string:teamname>/socials/')
 def get_socials(teamname):
     team = Team.query.filter_by(name=teamname).first()
     if team is not None:
-        socials = [social.serialize() for social in socials]
+        socials = [social.serialize() for social in team.socials]
         return json.dumps({'success': True, 'data': socials}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
 
