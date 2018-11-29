@@ -18,7 +18,9 @@ class HeaderView: UICollectionReusableView/* UICollectionViewCell*/ {
 
             header = UILabel()
             header.textColor = .black
-            header.text = "get rid of this"
+            header.text = "Current Project Teams"
+            header.textAlignment = NSTextAlignment.center
+            header.backgroundColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)
             addSubview(header)
             
             setup()
@@ -31,7 +33,7 @@ class HeaderView: UICollectionReusableView/* UICollectionViewCell*/ {
         func setup() {
             header.snp.makeConstraints { make in
                 make.bottom.equalToSuperview().inset(20)
-                make.leading.equalTo(24)
+                make.leading.equalTo(120)
                 make.trailing.lessThanOrEqualToSuperview().inset(24)
             }
         }

@@ -65,21 +65,44 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         super.viewDidLoad()
         
         
-//        headerView2 = HeaderView()
-//        headerView2.layer.shadowOffset = CGSize(width: 0.0, height: 9.0)
-//        headerView2.layer.shadowOpacity = 0.25
-//        headerView2.layer.masksToBounds = false
-//
-//        view.addSubview(headerView2)
-//        headerView2.snp.makeConstraints { make in
-//            make.leading.trailing.top.equalTo(view)
-//            make.height.equalTo(120)
-//        }
-//        collectionView.snp.makeConstraints {make in
-//            make.top.equalTo(headerView2.snp.bottom).offset(12)
-//            make.centerX.width.bottom.equalToSuperview()
-//        }
-//
+        
+        // tab bar
+        view.backgroundColor = UIColor.white
+        // Define the label.
+        let buttonWidth: CGFloat = 200
+        let buttonHeight: CGFloat = 50
+        let positionX: CGFloat = (view.bounds.width - buttonWidth)/2
+        let positionY: CGFloat = (view.bounds.height - buttonHeight)/2
+        let label = UILabel(frame: CGRect(x: positionX, y: positionY, width: buttonWidth, height: buttonHeight))
+        label.backgroundColor = UIColor.red
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 20.0
+        label.text = "First View"
+        label.textColor = UIColor.white
+        label.textAlignment = .center
+        // Add label to view.
+        view.addSubview(label)
+        
+        
+        
+
+        
+        
+        headerView2 = HeaderView()
+        headerView2.layer.shadowOffset = CGSize(width: 0.0, height: 9.0)
+        headerView2.layer.shadowOpacity = 0.25
+        headerView2.layer.masksToBounds = false
+
+        view.addSubview(headerView2)
+        headerView2.snp.makeConstraints { make in
+            make.leading.trailing.top.equalTo(view)
+            make.height.equalTo(120)
+        }
+        collectionView.snp.makeConstraints {make in
+            make.top.equalTo(headerView2.snp.bottom).offset(12)
+            make.centerX.width.bottom.equalToSuperview()
+        }
+
         
         
         collectionView.delegate = self
@@ -99,10 +122,14 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 0.0)
         navigationItem.title = "Project Teams"
-        navigationController?.navigationBar.barTintColor = .white
+        let font = UIFont(name: "Helvetica", size: 22)!
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.0),
+             NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 36)!]
         
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black,
-                                                                   NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
+        navigationController!.navigationBar.barTintColor = UIColor(red:0.33, green:0.01, blue:0.95, alpha:1.0)
+        
+ 
         
         collectionView?.register(TeamsCollectionViewCell.self, forCellWithReuseIdentifier: teamCell)
         
