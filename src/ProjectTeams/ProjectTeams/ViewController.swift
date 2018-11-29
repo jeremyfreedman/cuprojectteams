@@ -129,7 +129,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         navigationController!.navigationBar.barTintColor = UIColor(red:0.33, green:0.01, blue:0.95, alpha:1.0)
         
- 
+
         
         collectionView?.register(TeamsCollectionViewCell.self, forCellWithReuseIdentifier: teamCell)
         
