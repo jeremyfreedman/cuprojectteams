@@ -9,10 +9,15 @@
 import UIKit
 import SnapKit
 
-class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+//    let headerView = "headerView"
+//    var headerView2: TeamInfoHeaderView!
+    
     
     private let myArray: NSArray =
-        ["Imformation about the project team\ntext text text\ntext text text\ntext text text","Imformation about acomplishments\ntext text text\ntext text text\ntext text text","Imformation about team members\ntext text text\ntext text text\ntext text text","Timeline info\ntext text text\ntext text text\ntext text text"]
+        ["Imformation about the project team\n\ntext text text\ntext text text\ntext text text","Imformation about acomplishments\n\ntext text text\ntext text text\ntext text text","Imformation about team members\n\ntext text text\ntext text text\ntext text text","Timeline info\n\ntext text text\ntext text text\ntext text text"]
+    var arrImageName: [String] = ["appdev", "", "", ""]
     private var myTableView: UITableView!
     
     override func viewDidLoad() {
@@ -32,6 +37,27 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
         
         myTableView.tableFooterView = UIView()  // get rid of empty cells
         self.view.addSubview(myTableView)
+        
+        
+        
+        
+//        headerView2 = TeamInfoHeaderView()
+//        headerView2.layer.shadowOffset = CGSize(width: 0.0, height: 9.0)
+//        headerView2.layer.shadowOpacity = 0.25
+//        headerView2.layer.masksToBounds = false
+//
+//        view.addSubview(headerView2)
+//        headerView2.snp.makeConstraints { make in
+//            make.leading.trailing.top.equalTo(view)
+//            make.height.equalTo(120)
+//        }
+//        view.snp.makeConstraints {make in
+//            make.top.equalTo(headerView2.snp.bottom).offset(12)
+//            make.centerX.width.bottom.equalToSuperview()
+//        }
+        
+        
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -46,7 +72,21 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
         cell.textLabel!.text = "\(myArray[indexPath.row])"
-        cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text 
+        cell.imageView?.image = UIImage(named:self.arrImageName[indexPath.row])
+        cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text
         return cell
     }
+    
+//     func CollectionView(_ view: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        let headerView = view.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier, for: indexPath)
+//        headerView.setNeedsUpdateConstraints()
+//
+//        //        //
+//        //        let cell = view.dequeueReusableCell(withReuseIdentifier: teamCell, for: indexPath) as! TeamsviewCell
+//        //        headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleCellSelected(sender:))))
+//        //        //return cell
+//
+//
+//        return headerView
+//    }
 }
