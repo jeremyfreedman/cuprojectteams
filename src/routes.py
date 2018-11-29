@@ -103,7 +103,7 @@ def add_social(teamname):
             git = response.get('git'),
             email = response.get('email')
         )
-        team.socials.append(social)
+        team.socials = social
         db.session.add(social)
         db.session.commit()
         return json.dumps({'success': True, 'data': social.serialize()}), 201
