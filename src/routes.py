@@ -34,18 +34,36 @@ def add_team():
         return json.dumps({'success': True, 'data': team.serialize()}), 201
     return json.dumps({'success': False, 'error': 'Team already exists!'}), 409
 
-@app.route('/api/team/<string:teamname>/summary/')
+@app.route('/api/team/<string:teamname>/')
 def get_summary(teamname):
     team = Team.query.filter_by(name=teamname).first()
     if team is not None:
         return json.dumps({'success': True, 'data': team.serialize()}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
 
+@app.route('/api/team/<string:teamname>/accomplishment/', methods=['POST'])
+def add_accomplishment(teamname):
+    response = json.loads(request.data)
+    team = Team.query.filter_by(name=teamname).first()
+    if not team is None:
+        accomplishment = Accomplishment(
+            name = response.get('acc_name'),
+            year = response.get('acc_year'),
+            description = response.get('acc_desc'),
+            acc_img_url = response.get('acc_img_url')
+        )
+        team.accomplishments.append(accomplishment)
+        db.session.add(accomplishment)
+        db.session.commit()
+        return json.dumps({'success': True, 'data': accomplishment.serialize()}), 201
+    return json.dumps({'success': False, 'data': 'Team not found!'}), 404
+
+
 @app.route('/api/team/<string:teamname>/accomplishments/')
 def get_accomplishments(teamname):
     team = Team.query.filter_by(name=teamname).first()
     if team is not None:
-        accomplishments = [accomplishment.serialize() for accomplishment in accomplishments]
+        accomplishments = [accomplishment.serialize() for accomplishment in team.accomplishments]
         return json.dumps({'success': True, 'data': accomplishments}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
 
