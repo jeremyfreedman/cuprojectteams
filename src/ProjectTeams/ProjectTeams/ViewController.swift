@@ -122,10 +122,10 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 0.0)
         navigationItem.title = "Project Teams"
-        let font = UIFont(name: "Helvetica", size: 22)!
+//        let font = UIFont(name: "Helvetica", size: 22)!
         self.navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.0),
-             NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 36)!]
+            [NSAttributedString.Key.foregroundColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1.0),
+             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 32.0)]
         
         navigationController!.navigationBar.barTintColor = UIColor(red:0.33, green:0.01, blue:0.95, alpha:1.0)
         

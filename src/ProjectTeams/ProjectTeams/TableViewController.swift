@@ -1,18 +1,16 @@
 //
-//  AppDevViewController.swift
+//  TableViewController.swift
 //  ProjectTeams
 //
-//  Created by Jacob Bee Ho Brown on 11/21/18.
+//  Created by Jacob Bee Ho Brown on 11/29/18.
 //  Copyright © 2018 CS 1998. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
-class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private let myArray: NSArray =
-        ["Imformation about the project team\ntext text text\ntext text text\ntext text text","Imformation about acomplishments\ntext text text\ntext text text\ntext text text","Imformation about team members\ntext text text\ntext text text\ntext text text","Timeline info\ntext text text\ntext text text\ntext text text"]
+    private let myArray: NSArray = ["First","Second","Third"]
     private var myTableView: UITableView!
     
     override func viewDidLoad() {
@@ -26,11 +24,6 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
         myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
         myTableView.dataSource = self
         myTableView.delegate = self
-        
-        self.myTableView.rowHeight = 500
-        
-        
-        myTableView.tableFooterView = UIView()  // get rid of empty cells
         self.view.addSubview(myTableView)
     }
     
@@ -46,7 +39,6 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
         cell.textLabel!.text = "\(myArray[indexPath.row])"
-        cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text 
         return cell
     }
 }
