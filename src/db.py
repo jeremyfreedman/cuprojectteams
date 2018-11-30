@@ -58,9 +58,9 @@ class Member(db.Model):
     # any other info we can think of?
 
     def __init__(self, **kwargs):
-        self.member_name = kwargs.get('member_name')
-        self.member_comment = kwargs.get('member_comment')
-        self.member_img_url = kwargs.get('member_img_url')
+        self.member_name = kwargs.get('name')
+        self.member_comment = kwargs.get('comment')
+        self.member_img_url = kwargs.get('img_url')
 
     def serialize(self):
         return {
