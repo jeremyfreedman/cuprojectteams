@@ -102,6 +102,23 @@ class Social(db.Model):
             'email': self.email
         }
 
+class TimelineEvent(db.Model):
+    __tablename__ = 'timeline_event'
+    event_id = db.Column(db.Integer, primary_key = True)
+    team = db.Column(db.Text, db.ForeignKey('team.name'), nullable =False)
+    title = db.Column(db.Text)
+    description = db.Column(db.Text)
+
+    def __init__(self, **kwargs):
+        self.title = kwargs.get('title')
+        self.description = kwargs.get('description')
+
+    def serialize(self):
+        return {
+            'title': self.title
+            'description': self.description
+        }
+        
 #class Category(db.Model):
     #__tablename__ = 
     #pass
