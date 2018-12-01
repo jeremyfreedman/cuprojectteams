@@ -23,16 +23,19 @@ def get_teams():
 @app.route('/api/team/', methods=['POST'])
 def add_team():
     response = json.loads(request.data)
-    if Team.query.filter_by(name=response.get('name')) is None:
-        team = Team(
-            name = response.get('name'),
-            img_url = response.get('img_url'),
-            description = response.get('description')
-        )
-        db.session.add(team)
-        db.session.commit()
-        return json.dumps({'success': True, 'data': team.serialize()}), 201
-    return json.dumps({'success': False, 'error': 'Team already exists!'}), 409
+    team = Team.query.filter_by(name=response.get('name')).first()
+    print(team)
+#if not team is None:
+    team = Team(
+        name = response.get('name'),
+        img_url = response.get('img_url'),
+        description = response.get('description'),
+        category = response.get('category')
+    )
+    db.session.add(team)
+    db.session.commit()
+    return json.dumps({'success': True, 'data': team.serialize()}), 201
+    #return json.dumps({'success': False, 'error': 'Team already exists!'}), 409
 
 @app.route('/api/team/<string:teamname>/')
 def get_summary(teamname):
@@ -103,7 +106,7 @@ def add_social(teamname):
             git = response.get('git'),
             email = response.get('email')
         )
-        team.socials = social
+        team.socials.append(social)
         db.session.add(social)
         db.session.commit()
         return json.dumps({'success': True, 'data': social.serialize()}), 201
@@ -112,10 +115,28 @@ def add_social(teamname):
 @app.route('/api/team/<string:teamname>/socials/')
 def get_socials(teamname):
     team = Team.query.filter_by(name=teamname).first()
-    if team is not None:
+    if not team is None:
         socials = [social.serialize() for social in team.socials]
         return json.dumps({'success': True, 'data': socials}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
 
+@app.route('/api/team/<string:teamname>/tag/', methods=['POST'])
+def tag_team(teamname):
+    response = json.loads(request.data)
+    team = Team.query.filter_by(name=teamname).first()
+    if not team is None:
+        team.category = response.get('category')
+        db.session.commit()
+        return json.dumps({'success': True, 'data': team.serialize()}), 201
+    return json.dumps({'success': False, 'error': 'Team not found!'}), 404
+
+@app.route('/api/tag/<string:tagname>/')
+def get_tagged(tagname):
+    tag = Category.query.filter_by(category=tagname).first()
+    if not tag is None:
+        return json.dumps({'success': True, 'data': tag.serialize()}), 200
+    return json.dumps({'success': False, 'error': 'No such category!'}), 404
+
+        
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

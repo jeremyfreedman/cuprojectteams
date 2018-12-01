@@ -11,17 +11,20 @@ class Team(db.Model):
     accomplishments = db.relationship('Accomplishment')
     members = db.relationship('Member')
     socials = db.relationship('Social')
+    category = db.Column(db.Text, db.ForeignKey("category.category"))
 
     def __init__(self, **kwargs):
         self.name = kwargs.get('name')
         self.img_url = kwargs.get('img_url')
         self.description = kwargs.get('description')
+        self.category = kwargs.get('category')
 
     def serialize(self):
         return {
             'name': self.name,
             'img_url': self.img_url,
-            'description': self.description
+            'description': self.description,
+            'category': self.category
         }
 
 
@@ -55,19 +58,21 @@ class Member(db.Model):
     team = db.Column(db.Text, db.ForeignKey('team.name'), nullable=False) # same deal as Project.team
     member_name = db.Column(db.Text, nullable=False)
     member_comment = db.Column(db.Text, nullable=True)
-    member_comment_date = db.Column(db.DateTime, default=datetime.now())
+    member_comment_datetime = db.Column(db.DateTime, default=db.func.current_timestamp())
     member_img_url = db.Column(db.Text, nullable=True) # might be unfeasible to have pictures of these
     # any other info we can think of?
 
     def __init__(self, **kwargs):
         self.member_name = kwargs.get('name')
         self.member_comment = kwargs.get('comment')
+        self.member_comment_datetime = db.func.current_timestamp()
         self.member_img_url = kwargs.get('img_url')
 
     def serialize(self):
         return {
             'name': self.member_name,
             'comment': self.member_comment,
+            'datetime': str(self.member_comment_datetime),
             'img_url': self.member_img_url
         }
 
@@ -102,6 +107,15 @@ class Social(db.Model):
             'email': self.email
         }
 
-#class Category(db.Model):
-    #__tablename__ = 
-    #pass
+class Category(db.Model):
+    __tablename__ = "category"
+    category = db.Column(db.Text, primary_key=True, nullable=False)
+    teams = db.relationship('Team')
+
+    def __init__(self, **kwargs):
+        self.category = kwargs.get('category')
+
+    def serialize(self):
+        return {
+            [teams]
+        }
