@@ -72,6 +72,14 @@ class TeamsCollectionViewCell: UICollectionViewCell {
         teamImageView.layer.cornerRadius = CGFloat(roundf(Float(teamImageView.frame.size.width/2.0)))
         teamImageView.contentMode = UIView.ContentMode.scaleAspectFill
         
+        teamImageView.layer.cornerRadius = 10.0
+        teamImageView.layer.cornerRadius = 10.0
+        // only the top corners:
+        teamImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        teamImageView.layer.borderWidth = 1.0
+        teamImageView.layer.borderColor = UIColor.clear.cgColor
+        teamImageView.layer.masksToBounds = true
+        
         
         TeamNameLabel.anchor(top: teamImageView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         

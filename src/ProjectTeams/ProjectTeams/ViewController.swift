@@ -126,6 +126,11 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 0.0)
         navigationItem.title = "Project Teams"
+        navigationController?.navigationBar.barStyle = .black   // makes it WHITE
+        
+//        UIBarButtonItem.appearance().setTitlePositionAdjustment(UIOffset(horizontal: 100.0, vertical: 0.0), for: UIBarMetrics)
+        
+        
         //        let font = UIFont(name: "Helvetica", size: 22)!
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1.0),

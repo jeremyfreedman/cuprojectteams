@@ -14,6 +14,7 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
 //    let headerView = "headerView"
 //    var headerView2: TeamImageHeaderView!
     
+    let projectTeam = "appdev"
     
     private let myArray: NSArray =
         ["Imformation about the project team\n\ntext text text\ntext text text\ntext text text","Imformation about acomplishments\n\ntext text text\ntext text text\ntext text text","Imformation about team members\n\ntext text text\ntext text text\ntext text text","Timeline info\n\ntext text text\ntext text text\ntext text text"]
@@ -43,6 +44,11 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
         // larger header
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.tintColor = .white
+//        let navBackgroundImage:UIImage! = UIImage(named: "appdev")
+//        self.navigationController?.navigationBar.setBackgroundImage(navBackgroundImage,
+//                                                                    for: .default)
+        
 //        let navBgImage:UIImage = UIImage(named: "appdev")!
 //        self.navigationController!.navigationBar.setBackgroundImage(navBgImage, for: .default)
         
@@ -90,16 +96,47 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-//     func CollectionView(_ view: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        let headerView = view.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier, for: indexPath)
-//        headerView.setNeedsUpdateConstraints()
+    
+    
+//    // get info from database
+//    func updateSearchResults(/*for searchController: UISearchController*/) {
+//            if !projectTeam.isEmpty {
+//                switch searchBy {
+//                    /// ***
+//                    /// NOTE: You can set searchBy to be .title or .ingredients at the top of this class
+//                /// ***
+//                case .summary:
+//                    // TODO: Make a request to the Recipe Puppy API using a
+//                    // title and then update the table view with the updated [Recipe]
+//                    // that you get after you decode the response
+//                    // Hint: The searchText is the title.
+//                    NetworkManager.getRecipe(fromTitle: searchText, { (recipes) in
+//                        self.recipes = recipes
+//                        DispatchQueue.main.async {
+//                            self.tableView.reloadData()
+//                        }
+//                    })
 //
-//        //        //
-//        //        let cell = view.dequeueReusableCell(withReuseIdentifier: teamCell, for: indexPath) as! TeamsviewCell
-//        //        headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleCellSelected(sender:))))
-//        //        //return cell
-//
-//
-//        return headerView
+//                case .ingredients:
+//                    // TODO: Make a request to the Recipe Puppy API using a list of
+//                    // ingredients and then update the table view with the updated [Recipe]
+//                    // that you get after you decode the response
+//                    // Hint: The searchText is a string where the ingredients are
+//                    // separated by commas. (i.e. Apple, Butter, Cream)
+//                    let searchTextArray = searchText.components(separatedBy: ",")
+//                    NetworkManager.getRecipe(fromIngredients: searchTextArray, { (recipes) in
+//                        self.recipes = recipes
+//                        DispatchQueue.main.async {
+//                            self.tableView.reloadData()
+//                        }
+//                    })
+//                }
+//            }
+//            else {
+//                self.recipes = []
+//                self.tableView.reloadData()
+//            }
 //    }
+    
+    
 }
