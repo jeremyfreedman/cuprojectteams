@@ -107,6 +107,7 @@ class Social(db.Model):
             'email': self.email
         }
 
+<<<<<<< HEAD
 class Category(db.Model):
     __tablename__ = "category"
     category = db.Column(db.Text, primary_key=True, nullable=False)
@@ -119,3 +120,25 @@ class Category(db.Model):
         return {
             [teams]
         }
+=======
+class TimelineEvent(db.Model):
+    __tablename__ = 'timeline_event'
+    event_id = db.Column(db.Integer, primary_key = True)
+    team = db.Column(db.Text, db.ForeignKey('team.name'), nullable =False)
+    title = db.Column(db.Text)
+    description = db.Column(db.Text)
+
+    def __init__(self, **kwargs):
+        self.title = kwargs.get('title')
+        self.description = kwargs.get('description')
+
+    def serialize(self):
+        return {
+            'title': self.title
+            'description': self.description
+        }
+        
+#class Category(db.Model):
+    #__tablename__ = 
+    #pass
+>>>>>>> b796a81ac5d6dbfcd16c4a71d5cc92ecf0603421

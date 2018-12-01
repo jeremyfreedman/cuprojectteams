@@ -8,4 +8,5 @@ target 'ProjectTeams' do
   # Pods for ProjectTeams
     pod 'Alamofire'
     pod 'SnapKit'
+    pod 'SwiftyJSON'
 end

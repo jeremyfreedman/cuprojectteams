@@ -130,6 +130,7 @@ def tag_team(teamname):
         return json.dumps({'success': True, 'data': team.serialize()}), 201
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
 
+
 @app.route('/api/tag/<string:tagname>/')
 def get_tagged(tagname):
     tag = Category.query.filter_by(category=tagname).first()
