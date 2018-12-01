@@ -24,34 +24,34 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     var vc2 = ProjectTeamViewController()
     
     let teams = [Team(image: "appdev", name: "Cornell AppDev", type: "type"),
-                       Team(image: "", name: "AguaClara", type: "type"),
-                       Team(image: "", name: "Big Red Bridges", type: "type"),
-                       Team(image: "", name: "Cornell ACM Programming", type: "type"),
-                       Team(image: "", name: "Cornell Baja SAE", type: "type"),
-                       Team(image: "", name: "Cornell ChemE Car", type: "type"),
-                       Team(image: "", name: "Cornell Concrete Canoe", type: "type"),
-                       Team(image: "", name: "Cornell Cup Robotics", type: "type"),
-                       Team(image: "", name: "Cornell Data Science", type: "type"),
-                       Team(image: "", name: "Cornell Design & Tech Initiative", type: "type"),
-                       Team(image: "", name: "Cornell Engineering World Health", type: "type"),
-                       Team(image: "", name: "CGEM", type: "type"),
-                       Team(image: "", name: "Cornell Hyperloop", type: "type"),
-                       Team(image: "", name: "Cornell Mars Rover", type: "type"),
-                       Team(image: "", name: "Cornell Micro-g", type: "type"),
-                       Team(image: "", name: "Cornell Racing", type: "type"),
-                       Team(image: "", name: "Cornell Rocketry Team", type: "type"),
-                       Team(image: "", name: "Cornell Seismic Design", type: "type"),
-                       Team(image: "", name: "CUAUV", type: "type"),
-                       Team(image: "", name: "Cornell University DEBUT", type: "type"),
-                       Team(image: "", name: "CUAir", type: "type"),
-                       Team(image: "", name: "CU Autonomous Bicycle", type: "type"),
-                       Team(image: "", name: "CU Sail", type: "type"),
-                       Team(image: "", name: "CU Solar Boat", type: "type"),
-                       Team(image: "", name: "Design Build Fly", type: "type"),
-                       Team(image: "", name: "Engineers for a Sustainable World", type: "type"),
-                       Team(image: "", name: "Engineers Without Borders", type: "type"),
-                       Team(image: "", name: "Resistance Racing", type: "type"),
-                       Team(image: "", name: "Steel Bridge", type: "type")]
+                 Team(image: "aguaclara", name: "AguaClara", type: "type"),
+                 Team(image: "bigredbridges", name: "Big Red Bridges", type: "type"),
+                 Team(image: "acmprogramming", name: "Cornell ACM Programming", type: "type"),
+                 Team(image: "bajasae", name: "Cornell Baja SAE", type: "type"),
+                 Team(image: "chemecar", name: "Cornell ChemE Car", type: "type"),
+                 Team(image: "concretecanoe", name: "Cornell Concrete Canoe", type: "type"),
+                 Team(image: "cuprobotics", name: "Cornell Cup Robotics", type: "type"),
+                 Team(image: "datascience", name: "Cornell Data Science", type: "type"),
+                 Team(image: "designtech", name: "Cornell Design & Tech Initiative", type: "type"),
+                 Team(image: "engineeringworldhealth", name: "Cornell Engineering World Health", type: "type"),
+                 Team(image: "igem", name: "Cornell iGEM", type: "type"),
+                 Team(image: "hyperloop", name: "Cornell Hyperloop", type: "type"),
+                 Team(image: "marsrover", name: "Cornell Mars Rover", type: "type"),
+                 Team(image: "microg", name: "Cornell Micro-g", type: "type"),
+                 Team(image: "racing", name: "Cornell Racing", type: "type"),
+                 Team(image: "rocketry", name: "Cornell Rocketry Team", type: "type"),
+                 Team(image: "seismicdesign", name: "Cornell Seismic Design", type: "type"),
+                 Team(image: "cuauv", name: "CUAUV", type: "type"),
+                 Team(image: "debut", name: "Cornell University DEBUT", type: "type"),
+                 Team(image: "cuair", name: "CUAir", type: "type"),
+                 Team(image: "autonomousbike", name: "CU Autonomous Bicycle", type: "type"),
+                 Team(image: "sail", name: "CU Sail", type: "type"),
+                 Team(image: "solarboat", name: "CU Solar Boat", type: "type"),
+                 Team(image: "designbuildfly", name: "Design Build Fly", type: "type"),
+                 Team(image: "sustainableworld", name: "Engineers for a Sustainable World", type: "type"),
+                 Team(image: "sustainableworld", name: "Engineers Without Borders", type: "type"),
+                 Team(image: "resistanceracing", name: "Resistance Racing", type: "type"),
+                 Team(image: "steelbridge", name: "Steel Bridge", type: "type")]
     
     let scrollView: UIScrollView = {
         let v = UIScrollView()
@@ -64,7 +64,11 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // larger header
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        UINavigationBar.appearance().largeTitleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         // tab bar
         view.backgroundColor = UIColor.white
@@ -85,14 +89,14 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         
         
-
+        
         
         
         headerView2 = HeaderView()
         headerView2.layer.shadowOffset = CGSize(width: 0.0, height: 9.0)
         headerView2.layer.shadowOpacity = 0.25
         headerView2.layer.masksToBounds = false
-
+        
         view.addSubview(headerView2)
         headerView2.snp.makeConstraints { make in
             make.leading.trailing.top.equalTo(view)
@@ -102,7 +106,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
             make.top.equalTo(headerView2.snp.bottom).offset(12)
             make.centerX.width.bottom.equalToSuperview()
         }
-
+        
         
         
         collectionView.delegate = self
@@ -122,14 +126,14 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 0.0)
         navigationItem.title = "Project Teams"
-//        let font = UIFont(name: "Helvetica", size: 22)!
+        //        let font = UIFont(name: "Helvetica", size: 22)!
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1.0),
              NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 32.0)]
         
         navigationController!.navigationBar.barTintColor = UIColor(red:0.33, green:0.01, blue:0.95, alpha:1.0)
         
-
+        
         
         collectionView?.register(TeamsCollectionViewCell.self, forCellWithReuseIdentifier: teamCell)
         
@@ -184,10 +188,10 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier, for: indexPath)
         headerView.setNeedsUpdateConstraints()
         
-//        //
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: teamCell, for: indexPath) as! TeamsCollectionViewCell
-//        headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleCellSelected(sender:))))
-//        //return cell
+        //        //
+        //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: teamCell, for: indexPath) as! TeamsCollectionViewCell
+        //        headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleCellSelected(sender:))))
+        //        //return cell
         
         
         return headerView
@@ -210,9 +214,9 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         navigationController?.pushViewController(appDevViewController, animated: true)
     }
     
-//    @objc func handleCellSelected(sender: UITapGestureRecognizer){
-//        let cell = sender.view as! TeamsCollectionViewCell
-//        let indexPath = collectionView?.indexPath(for: cell)
-//    }
-
+    //    @objc func handleCellSelected(sender: UITapGestureRecognizer){
+    //        let cell = sender.view as! TeamsCollectionViewCell
+    //        let indexPath = collectionView?.indexPath(for: cell)
+    //    }
+    
 }

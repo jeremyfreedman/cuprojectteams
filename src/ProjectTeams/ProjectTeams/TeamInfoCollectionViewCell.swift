@@ -1,13 +1,18 @@
 //
-//  TeamInfoCollectionViewCell.swift
+//  TeamInfoTableViewCell.swift
 //  ProjectTeams
 //
-//  Created by Jacob Bee Ho Brown on 11/27/18.
+//  Created by Jacob Bee Ho Brown on 11/29/18.
 //  Copyright © 2018 CS 1998. All rights reserved.
 //
 
 import UIKit
 
-class TeamInfoCollectionViewCell: UICollectionViewCell {
+class TeamInfoTableViewCell: UITableViewCell {
+
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
 }

@@ -12,13 +12,14 @@ import SnapKit
 class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegateFlowLayout {
     
 //    let headerView = "headerView"
-//    var headerView2: TeamInfoHeaderView!
+//    var headerView2: TeamImageHeaderView!
     
     
     private let myArray: NSArray =
         ["Imformation about the project team\n\ntext text text\ntext text text\ntext text text","Imformation about acomplishments\n\ntext text text\ntext text text\ntext text text","Imformation about team members\n\ntext text text\ntext text text\ntext text text","Timeline info\n\ntext text text\ntext text text\ntext text text"]
-    var arrImageName: [String] = ["appdev", "", "", ""]
+//    var arrImageName: [String] = ["appdev", "", "", ""]
     private var myTableView: UITableView!
+    var headerImage = #imageLiteral(resourceName: "appdev")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +40,21 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
         self.view.addSubview(myTableView)
         
         
+        // larger header
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+//        let navBgImage:UIImage = UIImage(named: "appdev")!
+//        self.navigationController!.navigationBar.setBackgroundImage(navBgImage, for: .default)
+        
+
+//        UINavigationBar.appearance().largeTitleTextAttributes =
+//            [NSAttributedString.Key.foregroundColor: UIColor.green]
+//        self.navigationController?.navigationBar.setBackgroundImage((cgImage: a), for: <#T##UIBarMetrics#>)
         
         
-//        headerView2 = TeamInfoHeaderView()
+        
+        
+//        headerView2 = TeamImageHeaderView()
 //        headerView2.layer.shadowOffset = CGSize(width: 0.0, height: 9.0)
 //        headerView2.layer.shadowOpacity = 0.25
 //        headerView2.layer.masksToBounds = false
@@ -51,11 +64,11 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
 //            make.leading.trailing.top.equalTo(view)
 //            make.height.equalTo(120)
 //        }
-//        view.snp.makeConstraints {make in
+//        myTableView.snp.makeConstraints {make in
 //            make.top.equalTo(headerView2.snp.bottom).offset(12)
 //            make.centerX.width.bottom.equalToSuperview()
 //        }
-        
+
         
         
     }
@@ -72,7 +85,7 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
         cell.textLabel!.text = "\(myArray[indexPath.row])"
-        cell.imageView?.image = UIImage(named:self.arrImageName[indexPath.row])
+//        cell.imageView?.image = UIImage(named:self.arrImageName[indexPath.row])
         cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text
         return cell
     }
