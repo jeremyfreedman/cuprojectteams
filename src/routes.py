@@ -117,5 +117,27 @@ def get_socials(teamname):
         return json.dumps({'success': True, 'data': socials}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
 
+@app.route('/api/team/<string:teamname>/events/', methods=['POST'])
+def add_event(teamname):
+    response = json.loads(request.data)
+    team = Team.query.filter_by(name=teamname).first()
+    if not team is None:
+        event = TimelineEvent(
+            title = response.get('title')
+            description = response.get('description')
+        team.timeline_events.append(event)
+        db.session.add(event)
+        db.session.commit()
+        return json.dumps({'success': True, 'data': event.serialize()}), 201
+    return json.dumps({'success': False, 'data': 'Team not found!'}), 404
+
+@app.route('/api/team/<string:teamname>/events/')
+def get_events(teamname):
+    team = Team.query.filter_by(name=teamname).first()
+    if team is not None:
+        events = [event.serialize() for event in team.timeline_events]
+        return json.dumps({'success': True, 'data': event}), 200
+    return json.dumps({'success': False, 'error': 'Team not found!'}), 404
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
