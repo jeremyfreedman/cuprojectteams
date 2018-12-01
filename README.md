@@ -2,7 +2,7 @@
 
 An app to unify Cornell project team resources.
 
-Github (iOS and backend): https://github.com/jeremyfreedman/cuprojectteams/
+Github (iOS and backend): [Here](https://github.com/jeremyfreedman/cuprojectteams/)
 
 Some screenshots of your app (highlight important features)
 A short description of your app (its purpose and features)
