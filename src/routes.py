@@ -130,7 +130,7 @@ def tag_team(teamname):
         return json.dumps({'success': True, 'data': team.serialize()}), 201
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
 
-@app.route('/api/team/<string:teamname>/events/', methods=['POST'])
+@app.route('/api/team/<string:teamname>/event/', methods=['POST'])
 def add_event(teamname):
     response = json.loads(request.data)
     team = Team.query.filter_by(name=teamname).first()

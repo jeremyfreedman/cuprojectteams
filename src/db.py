@@ -12,6 +12,7 @@ class Team(db.Model):
     members = db.relationship('Member')
     socials = db.relationship('Social')
     category = db.Column(db.Text, db.ForeignKey("category.category"))
+    events = db.relationship('TimelineEvent')
 
     def __init__(self, **kwargs):
         self.name = kwargs.get('name')
