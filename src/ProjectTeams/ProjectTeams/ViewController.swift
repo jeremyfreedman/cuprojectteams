@@ -48,7 +48,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
                  Team(image: "solarboat", name: "CU Solar Boat", type: "type"),
                  Team(image: "designbuildfly", name: "Design Build Fly", type: "type"),
                  Team(image: "sustainableworld", name: "Engineers for a Sustainable World", type: "type"),
-                 Team(image: "sustainableworld", name: "Engineers Without Borders", type: "type"),
+                 Team(image: "withoutborders", name: "Engineers Without Borders", type: "type"),
                  Team(image: "resistanceracing", name: "Resistance Racing", type: "type"),
                  Team(image: "steelbridge", name: "Steel Bridge", type: "type")]
     
@@ -69,11 +69,21 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { recipes in
             print("aaaaaaaa")
             print(recipes)
-        guard let jsonArray = recipes as? [[String: Any]] else {
-            return
-        }
-        print("jsonArray")
-        print(jsonArray)
+            print("rfnberbnuvibenrv;nare")
+//        guard let jsonArray = recipes as? [[String: Any]] else {
+//            return
+//        }
+//        print("jsonArray")
+//        print(jsonArray)
+        })
+        
+        NetworkManager.getAccomplishments(fromProjectTeams: ["cuair"], { recipes in
+            print("zzzzzzzzzz")
+            print(recipes)
+            let routes = recipes.description as? String
+            print(routes)
+//                recipes.value(forKey: "description") as? NSArray
+            print("lololololol.lol.")
         })
         
         
