@@ -21,14 +21,16 @@ enum SearchType {
 
 class NetworkManager {
     
-    private static let URL = "35.185.52.186/api/"
-    var teamname = ""
+    private static let URL = "http://35.185.52.186/api/team/"
+    private static var teamname = "CU%20Air"
     
     static func getSummary(fromProjectTeams summary: [String], _ didGetProjectTeams: @escaping ([ProjectTeam]) -> Void) {
         let parameters: [String:Any] = [
             "description": summary
         ]
-        Alamofire.request(URL, method: .get).validate().responseData { (response) in
+        var summaryURL = URL+teamname+"/"
+//        Alamofire.request(URL+"", method: .get).validate().responseData { (response) in
+        Alamofire.request(summaryURL, method: .get).validate().responseData { (response) in
             switch response.result {
             case .success(let data):
                 if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
@@ -81,7 +83,8 @@ class NetworkManager {
                     print(json)
                 }
                 let decoder = JSONDecoder()
-                if let projectTeamsSearchResponse = try? decoder.decode(ProjectTeamSearchResponse.self, from: data) {
+                if let projectTeamsSearchResponse = try? decoder.decode(
+                    ProjectTeamSearchResponse.self, from: data) {
                     print(projectTeamsSearchResponse.results)
                     didGetProjectTeams(projectTeamsSearchResponse.results)
                 } else {
@@ -97,7 +100,8 @@ class NetworkManager {
         let parameters: [String:Any] = [
             "teamname": teamname
         ]
-        Alamofire.request(URL, method: .get).validate().responseData { (response) in
+        var accomplishmentsURL = URL+self.teamname+"/accomplishments/"
+        Alamofire.request(accomplishmentsURL, method: .get).validate().responseData { (response) in
             switch response.result {
             case .success(let data):
                 if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
@@ -120,7 +124,7 @@ class NetworkManager {
         let parameters: [String:Any] = [
             "teamname": teamname
         ]
-       Alamofire.request(URL, method: .get).validate().responseData { (response) in
+        Alamofire.request(URL+self.teamname+"/members/", method: .get).validate().responseData { (response) in
             switch response.result {
             case .success(let data):
                 if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
@@ -143,7 +147,8 @@ class NetworkManager {
         let parameters: [String:Any] = [
             "teamname": teamname
         ]
-        Alamofire.request(URL, method: .get).validate().responseData { (response) in
+        var timelineURL = URL+self.teamname+"/socials/"
+        Alamofire.request(timelineURL, method: .get).validate().responseData { (response) in
             switch response.result {
             case .success(let data):
                 if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
@@ -166,7 +171,8 @@ class NetworkManager {
         let parameters: [String:Any] = [
             "teamname": teamname
         ]
-        Alamofire.request(URL, method: .get).validate().responseData { (response) in
+        var timelineURL = URL+self.teamname+"/timeline/"
+        Alamofire.request(timelineURL, method: .get).validate().responseData { (response) in
             switch response.result {
             case .success(let data):
                 if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
