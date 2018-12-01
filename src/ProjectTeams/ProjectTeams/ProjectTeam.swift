@@ -13,6 +13,7 @@ struct ProjectTeam: Codable {
     let accomplishments: String
     let members: String
     let socialMedias: String
+    let timeline: String
 }
 
 struct ProjectTeamSearchResponse: Codable {

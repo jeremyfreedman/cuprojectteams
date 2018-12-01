@@ -17,7 +17,7 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     let projectTeam = "appdev"
     
     private let myArray: NSArray =
-        ["Imformation about the project team\n\ntext text text\ntext text text\ntext text text","Imformation about acomplishments\n\ntext text text\ntext text text\ntext text text","Imformation about team members\n\ntext text text\ntext text text\ntext text text","Timeline info\n\ntext text text\ntext text text\ntext text text"]
+        ["SUMMARY\n\ntext text text\ntext text text\ntext text text","ACCOMPLISHMENTS\n\ntext text text\ntext text text\ntext text text","MEMBERS\n\ntext text text\ntext text text\ntext text text","TIMELINE\n\ntext text text\ntext text text\ntext text text","SOCIAL MEDIAS\n\ntext text text\ntext text text\ntext text text"]
 //    var arrImageName: [String] = ["appdev", "", "", ""]
     private var myTableView: UITableView!
     var headerImage = #imageLiteral(resourceName: "appdev")
