@@ -22,7 +22,6 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     let filterBarHeight: CGFloat = 30
     
     var vc2 = ProjectTeamViewController()
-    
     let teams = [Team(image: "appdev", name: "Cornell AppDev", type: "type"),
                  Team(image: "aguaclara", name: "AguaClara", type: "type"),
                  Team(image: "bigredbridges", name: "Big Red Bridges", type: "type"),
@@ -63,6 +62,23 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        print("aaaaaaaa")
+        NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { recipes in
+            print("aaaaaaaa")
+            print(recipes)
+        guard let jsonArray = recipes as? [[String: Any]] else {
+            return
+        }
+        print("jsonArray")
+        print(jsonArray)
+        })
+        
+        
+        
+        
         
         // larger header
         self.navigationController?.navigationBar.prefersLargeTitles = true

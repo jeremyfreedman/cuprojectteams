@@ -16,6 +16,7 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     
     let projectTeam = "appdev"
     
+    
     private let myArray: NSArray =
         ["SUMMARY\n\ntext text text\ntext text text\ntext text text","ACCOMPLISHMENTS\n\ntext text text\ntext text text\ntext text text","MEMBERS\n\ntext text text\ntext text text\ntext text text","TIMELINE\n\ntext text text\ntext text text\ntext text text","SOCIAL MEDIAS\n\ntext text text\ntext text text\ntext text text"]
 //    var arrImageName: [String] = ["appdev", "", "", ""]
@@ -24,6 +25,20 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        print("aaaaaaaa")
+        NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { recipes in
+            print("aaaaaaaa")
+            print(recipes)
+            DispatchQueue.main.async {
+                self.myTableView.reloadData()
+                print("ffffffff")
+                print(recipes)
+            }
+            print(recipes)
+            
+        })
         
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
         let displayWidth: CGFloat = self.view.frame.width
@@ -93,6 +108,19 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
         cell.textLabel!.text = "\(myArray[indexPath.row])"
 //        cell.imageView?.image = UIImage(named:self.arrImageName[indexPath.row])
         cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text
+//        print("aaaaaaaa")
+//        NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { recipes in
+//            print("aaaaaaaa")
+//            print(recipes)
+//            DispatchQueue.main.async {
+//                self.myTableView.reloadData()
+//                print("ffffffff")
+//                print(recipes)
+//            }
+//            print(recipes)
+//
+//        })
+        
         return cell
     }
     
