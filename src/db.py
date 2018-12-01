@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -54,6 +55,7 @@ class Member(db.Model):
     team = db.Column(db.Text, db.ForeignKey('team.name'), nullable=False) # same deal as Project.team
     member_name = db.Column(db.Text, nullable=False)
     member_comment = db.Column(db.Text, nullable=True)
+    member_comment_date = db.Column(db.DateTime, default=datetime.now())
     member_img_url = db.Column(db.Text, nullable=True) # might be unfeasible to have pictures of these
     # any other info we can think of?
 
@@ -99,3 +101,7 @@ class Social(db.Model):
             'git': self.git,
             'email': self.email
         }
+
+#class Category(db.Model):
+    #__tablename__ = 
+    #pass
