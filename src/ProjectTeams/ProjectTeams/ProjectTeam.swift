@@ -106,7 +106,6 @@ struct AccomplishmentsSearchResponse: Codable {
     var results: [Accomplishments]
 }
 
-
 struct AccomplishedSearchResponse: Codable {
     var results: [Accomplished]
 }

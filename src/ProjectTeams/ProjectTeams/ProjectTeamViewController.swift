@@ -24,10 +24,27 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
         ["SUMMARY\n\ntext text text\ntext text text\ntext text text","ACCOMPLISHMENTS\n\ntext text text\ntext text text\ntext text text","MEMBERS\n\ntext text text\ntext text text\ntext text text","TIMELINE\n\ntext text text\ntext text text\ntext text text","SOCIAL MEDIAS\n\ntext text text\ntext text text\ntext text text"]
 //    var arrImageName: [String] = ["appdev", "", "", ""]
     private var myTableView: UITableView!
+    var tableView = UITableView()
     var headerImage = #imageLiteral(resourceName: "appdev")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        view.addSubview(tableView)
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        
+//        // Set up tableview logic
+//        tableView.dataSource = self
+//        tableView.register(TeamInfoTableViewCell.self, forCellReuseIdentifier: projectTeamIdentifier)
+//        
+//        // Make tableview cells' height dynamically resize
+//        tableView.estimatedRowHeight = 100
+//        tableView.rowHeight = UITableView.automaticDimension
+        
+        
         
         
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
