@@ -65,26 +65,26 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         
         
-        print("aaaaaaaa")
-        NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { recipes in
-            print("aaaaaaaa")
-            print(recipes)
-            print("rfnberbnuvibenrv;nare")
-//        guard let jsonArray = recipes as? [[String: Any]] else {
-//            return
-//        }
-//        print("jsonArray")
-//        print(jsonArray)
-        })
-        
-        NetworkManager.getAccomplishments(fromProjectTeams: ["cuair"], { recipes in
-            print("zzzzzzzzzz")
-            print(recipes)
-            let routes = recipes.description as? String
-            print(routes)
-//                recipes.value(forKey: "description") as? NSArray
-            print("lololololol.lol.")
-        })
+//        print("aaaaaaaa")
+//        NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { recipes in
+//            print("aaaaaaaa")
+//            print(recipes)
+//            print("rfnberbnuvibenrv;nare")
+////        guard let jsonArray = recipes as? [[String: Any]] else {
+////            return
+////        }
+////        print("jsonArray")
+////        print(jsonArray)
+//        })
+//        
+//        NetworkManager.getAccomplishments(fromProjectTeams: ["cuair"], { recipes in
+//            print("zzzzzzzzzz")
+//            print(recipes)
+//            let routes = recipes.description as? String
+//            print(routes)
+////                recipes.value(forKey: "description") as? NSArray
+//            print("lololololol.lol.")
+//        })
         
         
         

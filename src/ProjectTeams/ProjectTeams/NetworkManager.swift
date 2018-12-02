@@ -145,10 +145,10 @@ class NetworkManager {
     
     static func getSocialMedias(fromProjectTeams teamname: [String], _ didGetProjectTeams: @escaping ([ProjectTeam]) -> Void) {
         let parameters: [String:Any] = [
-            "teamname": teamname
+            "instagram": "instagram"
         ]
-        var timelineURL = URL+self.teamname+"/socials/"
-        Alamofire.request(timelineURL, method: .get).validate().responseData { (response) in
+        let timelineURL = URL+self.teamname+"/socials/"
+        Alamofire.request(timelineURL, method: .get, parameters: parameters).validate().responseData { (response) in
             switch response.result {
             case .success(let data):
                 if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
