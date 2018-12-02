@@ -17,6 +17,7 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     let projectTeam = "appdev"
     let projectTeamIdentifier = "ProjectTeam"
     var projectTeams: [ProjectTeam] = []   // fix this !!!
+    var socialMedias: [SocialMedia] = []
     
     
     private let myArray: NSArray =
@@ -128,8 +129,9 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: projectTeamIdentifier, for: indexPath)  as! TeamInfoTableViewCell
         
         cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text
-        cell.summaryLabel.text = projectTeams[indexPath.row].socialMedias
-        cell.summaryLabel.text = projectTeams[indexPath.row].summary
+//        cell.summaryLabel.text = socialMedias[indexPath.row].success?.description ?? "none"
+        cell.summaryLabel.text = socialMedias[indexPath.row].data[0].facebook
+//        cell.summaryLabel.text = projectTeams[indexPath.row].summary
         
         
         return cell
@@ -157,7 +159,7 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     
     func updateSearchResults() {
                     NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { teams in
-                        self.projectTeams = teams
+                        self.socialMedias = teams
 //                        projectTeams[indexPath.row].socialMedias
                         DispatchQueue.main.async {
                             self.myTableView.reloadData()
@@ -168,12 +170,12 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
                 //self.projectTeams = []
                 //self.myTableView.reloadData()
         
-        NetworkManager.getSummary(fromProjectTeams: ["cuair"], { teams in
-            self.projectTeams = teams
-            DispatchQueue.main.async {
-                self.myTableView.reloadData()
-                print("request successful")
-            }
-        })
+//        NetworkManager.getSummary(fromProjectTeams: ["cuair"], { teams in
+//            self.projectTeams = teams
+//            DispatchQueue.main.async {
+//                self.myTableView.reloadData()
+//                print("request successful")
+//            }
+//        })
         }
     }
