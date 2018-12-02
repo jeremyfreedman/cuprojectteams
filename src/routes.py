@@ -169,10 +169,8 @@ def get_events(teamname):
 @app.route('/api/tag/<string:tagname>/')
 def get_tagged(tagname):
     teams = Team.query.filter_by(category=tagname)
-    if not teams is None:
-        teams = [team.serialize() for team in teams]
-        return json.dumps({'success': True, 'data': teams}), 200
-    return json.dumps({'success': False, 'error': 'No such category!'}), 404
+    teams = [team.serialize() for team in teams]
+    return json.dumps({'success': True, 'data': teams}), 200
 
 
 if __name__ == '__main__':
