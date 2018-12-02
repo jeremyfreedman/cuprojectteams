@@ -15,6 +15,9 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
 //    var headerView2: TeamImageHeaderView!
     
     let projectTeam = "appdev"
+    let projectTeamIdentifier = "ProjectTeam"
+    var projectTeams: [ProjectTeam] = []   // fix this !!!
+    var socialMedias: [SocialMedia] = []
     
     
     private let myArray: NSArray =
@@ -27,33 +30,23 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         
-        print("aaaaaaaa")
-        NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { recipes in
-            print("aaaaaaaa")
-            print(recipes)
-            DispatchQueue.main.async {
-                self.myTableView.reloadData()
-                print("ffffffff")
-                print(recipes)
-            }
-            print(recipes)
-            
-        })
-        
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
         let displayWidth: CGFloat = self.view.frame.width
         let displayHeight: CGFloat = self.view.frame.height
         
         myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
-        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
+        //myTableView.register(TeamInfoTableViewCell.self, forCellReuseIdentifier: "MyCell")
         myTableView.dataSource = self
         myTableView.delegate = self
-        
+        //myTableView.register(UITableViewCell.self, forCellReuseIdentifier: projectTeamIdentifier)
+        myTableView.rowHeight = UITableView.automaticDimension
         self.myTableView.rowHeight = 500
         
         
         myTableView.tableFooterView = UIView()  // get rid of empty cells
+        myTableView.register(TeamInfoTableViewCell.self, forCellReuseIdentifier: projectTeamIdentifier)
         self.view.addSubview(myTableView)
+        definesPresentationContext = true
         
         
         // larger header
@@ -90,81 +83,103 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
 //            make.centerX.width.bottom.equalToSuperview()
 //        }
 
-        
-        
+        print("update")
+        updateSearchResults()
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num: \(indexPath.row)")
         print("Value: \(myArray[indexPath.row])")
     }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return myArray.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
+//        cell.textLabel!.text = "\(myArray[indexPath.row])"
+////        cell.imageView?.image = UIImage(named:self.arrImageName[indexPath.row])
+//        cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text
+//
+//        return cell
+//    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myArray.count
-    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
-        cell.textLabel!.text = "\(myArray[indexPath.row])"
-//        cell.imageView?.image = UIImage(named:self.arrImageName[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: projectTeamIdentifier, for: indexPath)  as! TeamInfoTableViewCell
+        
         cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text
-//        print("aaaaaaaa")
-//        NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { recipes in
-//            print("aaaaaaaa")
-//            print(recipes)
-//            DispatchQueue.main.async {
-//                self.myTableView.reloadData()
-//                print("ffffffff")
-//                print(recipes)
-//            }
-//            print(recipes)
-//
-//        })
+//        cell.summaryLabel.text = socialMedias[indexPath.row].success?.description ?? "none"
+        cell.summaryLabel.text = socialMedias[indexPath.row].data[0].facebook
+//        cell.summaryLabel.text = projectTeams[indexPath.row].summary
+        
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return projectTeams.count
+    }
     
     
-//    // get info from database
-//    func updateSearchResults(/*for searchController: UISearchController*/) {
-//            if !projectTeam.isEmpty {
-//                switch searchBy {
-//                    /// ***
-//                    /// NOTE: You can set searchBy to be .title or .ingredients at the top of this class
-//                /// ***
-//                case .summary:
-//                    // TODO: Make a request to the Recipe Puppy API using a
-//                    // title and then update the table view with the updated [Recipe]
-//                    // that you get after you decode the response
-//                    // Hint: The searchText is the title.
-//                    NetworkManager.getRecipe(fromTitle: searchText, { (recipes) in
-//                        self.recipes = recipes
-//                        DispatchQueue.main.async {
-//                            self.tableView.reloadData()
-//                        }
-//                    })
-//
-//                case .ingredients:
-//                    // TODO: Make a request to the Recipe Puppy API using a list of
-//                    // ingredients and then update the table view with the updated [Recipe]
-//                    // that you get after you decode the response
-//                    // Hint: The searchText is a string where the ingredients are
-//                    // separated by commas. (i.e. Apple, Butter, Cream)
-//                    let searchTextArray = searchText.components(separatedBy: ",")
-//                    NetworkManager.getRecipe(fromIngredients: searchTextArray, { (recipes) in
-//                        self.recipes = recipes
-//                        DispatchQueue.main.async {
-//                            self.tableView.reloadData()
-//                        }
-//                    })
-//                }
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+
+
+    
+    // MARK: UISearchResultsUpdating Protocol
+    
+    func updateSearchResults() {
+        print("trying cuair")
+                    NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { teams in
+                        self.socialMedias = teams
+                        ("print getting cuair...")
+//                        projectTeams[indexPath.row].socialMedias
+                        DispatchQueue.main.async {
+                            self.myTableView.reloadData()
+                            print("request successful")
+                        }
+                    })
+                // else:
+                //self.projectTeams = []
+                //self.myTableView.reloadData()
+        
+//        NetworkManager.getSummary(fromProjectTeams: ["cuair"], { teams in
+//            self.projectTeams = teams
+//            DispatchQueue.main.async {
+//                self.myTableView.reloadData()
+//                print("request successful")
 //            }
-//            else {
-//                self.recipes = []
-//                self.tableView.reloadData()
-//            }
-//    }
-    
-    
-}
+//        })
+            print("cuair done")
+        }
+    }
