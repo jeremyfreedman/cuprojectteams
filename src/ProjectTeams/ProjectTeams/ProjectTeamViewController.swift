@@ -16,7 +16,7 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     
     let projectTeam = "appdev"
     let projectTeamIdentifier = "ProjectTeam"
-    var projectTeams: [ProjectTeam] = [] shiii  // fix this !!!
+    var projectTeams: [ProjectTeam] = []   // fix this !!!
     
     
     private let myArray: NSArray =
