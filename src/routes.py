@@ -20,22 +20,23 @@ def get_teams():
     res = {'success': True, 'data': [team.serialize() for team in teams]} 
     return json.dumps(res), 200
 
+
 @app.route('/api/team/', methods=['POST'])
 def add_team():
     response = json.loads(request.data)
     team = Team.query.filter_by(name=response.get('name')).first()
-    print(team)
-#if not team is None:
-    team = Team(
-        name = response.get('name'),
-        img_url = response.get('img_url'),
-        description = response.get('description'),
-        category = response.get('category')
-    )
-    db.session.add(team)
-    db.session.commit()
-    return json.dumps({'success': True, 'data': team.serialize()}), 201
-    #return json.dumps({'success': False, 'error': 'Team already exists!'}), 409
+    if team is None:
+        team = Team(
+            name = response.get('name'),
+            img_url = response.get('img_url'),
+            description = response.get('description'),
+            category = response.get('category')
+        )
+        db.session.add(team)
+        db.session.commit()
+        return json.dumps({'success': True, 'data': team.serialize()}), 201
+    return json.dumps({'success': False, 'error': 'Team already exists!'}), 409
+
 
 @app.route('/api/team/<string:teamname>/')
 def get_summary(teamname):
@@ -43,6 +44,7 @@ def get_summary(teamname):
     if team is not None:
         return json.dumps({'success': True, 'data': team.serialize()}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
+
 
 @app.route('/api/team/<string:teamname>/accomplishment/', methods=['POST'])
 def add_accomplishment(teamname):
@@ -61,6 +63,7 @@ def add_accomplishment(teamname):
         return json.dumps({'success': True, 'data': accomplishment.serialize()}), 201
     return json.dumps({'success': False, 'data': 'Team not found!'}), 404    
 
+
 @app.route('/api/team/<string:teamname>/accomplishments/')
 def get_accomplishments(teamname):
     team = Team.query.filter_by(name=teamname).first()
@@ -68,6 +71,7 @@ def get_accomplishments(teamname):
         accomplishments = [accomplishment.serialize() for accomplishment in team.accomplishments]
         return json.dumps({'success': True, 'data': accomplishments}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
+
 
 @app.route('/api/team/<string:teamname>/member/', methods=['POST'])
 def add_member(teamname):
@@ -85,6 +89,7 @@ def add_member(teamname):
         return json.dumps({'success': True, 'data': member.serialize()}), 201
     return json.dumps({'success': False, 'data': 'Team not found!'}), 404
 
+
 @app.route('/api/team/<string:teamname>/members/')
 def get_members(teamname):
     team = Team.query.filter_by(name=teamname).first()
@@ -92,6 +97,7 @@ def get_members(teamname):
         members = [member.serialize() for member in team.members]
         return json.dumps({'success': True, 'data': members}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
+
 
 @app.route('/api/team/<string:teamname>/social/', methods=['POST'])
 def add_social(teamname):
@@ -112,6 +118,7 @@ def add_social(teamname):
         return json.dumps({'success': True, 'data': social.serialize()}), 201
     return json.dumps({'success': False, 'data': 'Team not found!'}), 404
 
+
 @app.route('/api/team/<string:teamname>/socials/')
 def get_socials(teamname):
     team = Team.query.filter_by(name=teamname).first()
@@ -119,6 +126,7 @@ def get_socials(teamname):
         socials = [social.serialize() for social in team.socials]
         return json.dumps({'success': True, 'data': socials}), 200
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
+
 
 @app.route('/api/team/<string:teamname>/tag/', methods=['POST'])
 def tag_team(teamname):
@@ -129,6 +137,7 @@ def tag_team(teamname):
         db.session.commit()
         return json.dumps({'success': True, 'data': team.serialize()}), 201
     return json.dumps({'success': False, 'error': 'Team not found!'}), 404
+
 
 @app.route('/api/team/<string:teamname>/event/', methods=['POST'])
 def add_event(teamname):
@@ -145,6 +154,7 @@ def add_event(teamname):
         return json.dumps({'success': True, 'data': event.serialize()}), 201
     return json.dumps({'success': False, 'data': 'Team not found!'}), 404
 
+
 @app.route('/api/team/<string:teamname>/events/')
 def get_events(teamname):
     team = Team.query.filter_by(name=teamname).first()
@@ -158,11 +168,11 @@ def get_events(teamname):
 
 @app.route('/api/tag/<string:tagname>/')
 def get_tagged(tagname):
-    tag = Category.query.filter_by(category=tagname).first()
-    if not tag is None:
-        return json.dumps({'success': True, 'data': tag.serialize()}), 200
+    teams = Team.query.filter_by(category=tagname)
+    if not teams is None:
+        teams = [team.serialize() for team in teams]
+        return json.dumps({'success': True, 'data': teams}), 200
     return json.dumps({'success': False, 'error': 'No such category!'}), 404
-
 
 
 if __name__ == '__main__':
