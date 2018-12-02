@@ -8,10 +8,10 @@ class Team(db.Model):
     name = db.Column(db.Text, primary_key=True)
     img_url = db.Column(db.Text, nullable=True) # can we host images on Google Cloud? Probably.
     description = db.Column(db.Text, nullable=False)
+    category = db.Column(db.Text, nullable=True)
     accomplishments = db.relationship('Accomplishment')
     members = db.relationship('Member')
     socials = db.relationship('Social')
-    category = db.Column(db.Text, db.ForeignKey("category.category"))
     events = db.relationship('TimelineEvent')
 
     def __init__(self, **kwargs):
@@ -108,18 +108,6 @@ class Social(db.Model):
             'email': self.email
         }
 
-class Category(db.Model):
-    __tablename__ = "category"
-    category = db.Column(db.Text, primary_key=True, nullable=False)
-    teams = db.relationship('Team')
-
-    def __init__(self, **kwargs):
-        self.category = kwargs.get('category')
-
-    def serialize(self):
-        return {
-            [teams]
-        }
 
 class TimelineEvent(db.Model):
     __tablename__ = 'timeline_event'
