@@ -35,15 +35,16 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
         let displayHeight: CGFloat = self.view.frame.height
         
         myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
-        myTableView.register(TeamInfoTableViewCell.self, forCellReuseIdentifier: "MyCell")
+        //myTableView.register(TeamInfoTableViewCell.self, forCellReuseIdentifier: "MyCell")
         myTableView.dataSource = self
         myTableView.delegate = self
-        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: projectTeamIdentifier)
+        //myTableView.register(UITableViewCell.self, forCellReuseIdentifier: projectTeamIdentifier)
         myTableView.rowHeight = UITableView.automaticDimension
         self.myTableView.rowHeight = 500
         
         
         myTableView.tableFooterView = UIView()  // get rid of empty cells
+        myTableView.register(TeamInfoTableViewCell.self, forCellReuseIdentifier: projectTeamIdentifier)
         self.view.addSubview(myTableView)
         definesPresentationContext = true
         
@@ -82,7 +83,7 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
 //            make.centerX.width.bottom.equalToSuperview()
 //        }
 
-        
+        print("update")
         updateSearchResults()
     }
     
@@ -158,8 +159,10 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: UISearchResultsUpdating Protocol
     
     func updateSearchResults() {
+        print("trying cuair")
                     NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { teams in
                         self.socialMedias = teams
+                        ("print getting cuair...")
 //                        projectTeams[indexPath.row].socialMedias
                         DispatchQueue.main.async {
                             self.myTableView.reloadData()
@@ -177,5 +180,6 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
 //                print("request successful")
 //            }
 //        })
+            print("cuair done")
         }
     }

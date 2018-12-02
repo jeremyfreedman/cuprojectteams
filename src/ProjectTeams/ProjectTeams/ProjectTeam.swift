@@ -19,7 +19,7 @@ struct ProjectTeam: Codable {
 
 // All Teams
 struct AllTeams: Codable {
-    let success: Bool
+    // let success: Bool
     let team: [EngineeringTeam]
 }
 // Individual Team
@@ -32,7 +32,7 @@ struct EngineeringTeam: Codable {
 
 // Events/Timeline
 struct Events: Codable {
-    let success: Bool
+    // let success: Bool
     let data: [Timeline]
 }
 struct Timeline: Codable {
@@ -41,7 +41,7 @@ struct Timeline: Codable {
 
 // Accomplishments
 struct Accomplishments: Codable {
-    let success: Bool
+    // let success: Bool
     let data: [Accomplished]
 }
 
@@ -54,7 +54,7 @@ struct Accomplished: Codable {
 
 // Team Members
 struct Members: Codable {
-    let success: Bool
+    // let success: Bool
     let data: [TeamMember]
 }
 struct TeamMember: Codable {
@@ -68,7 +68,7 @@ struct TeamMember: Codable {
 
 // Social Medias
 struct SocialMedia: Codable {
-    let success: Bool
+    //// let success: Bool
     let data: [SocialsDict]
 }
 struct SocialsDict: Codable {
@@ -78,6 +78,12 @@ struct SocialsDict: Codable {
     let website: String
     let git: String
     let email: String
+//    let email: String
+//    let facebook: String
+//    let git: String
+//    let instagram: String
+//    let twitter: String
+//    let website: String
 }
 
 struct ProjectTeamSearchResponse: Codable {

@@ -148,20 +148,33 @@ class NetworkManager {
             "instagram": "instagram"
         ]
         let timelineURL = URL+self.teamname+"/socials/"
-        Alamofire.request(timelineURL, method: .get, parameters: parameters).validate().responseData { (response) in
+        Alamofire.request(timelineURL, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData { (response) in
+//        Alamofire.request(timelineURL, method: .get, parameters: parameters).validate().responseData { (response) in
             switch response.result {
             case .success(let data):
+ 
                 if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
                     print(json)
+                    print("social media SUCCESS")
                 }
                 let decoder = JSONDecoder()
+                
+                
+                
+                // NOT EXECUTED:
                 if let socialMediasSearchResponse = try? decoder.decode(SocialMediasSearchResponse.self, from: data) {
                     print(socialMediasSearchResponse.results)
                     didGetProjectTeams(socialMediasSearchResponse.results)
+                    print("social media DECODE")
+                    
+                    
+                    
                 } else {
+                    print("ELSE (DOD NOT DECODE):")
                     print("Invalid Response Data")
                 }
             case .failure(let error):
+                print("social media FAILURE")
                 print(error.localizedDescription)
             }
         }
