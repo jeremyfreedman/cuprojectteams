@@ -16,7 +16,7 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     
     let projectTeam = "appdev"
     let projectTeamIdentifier = "ProjectTeam"
-    var projectTeams: [ProjectTeam.socialMedias] = [] // fix this !!!
+    var projectTeams: [ProjectTeam] = [] shiii  // fix this !!!
     
     
     private let myArray: NSArray =
@@ -157,8 +157,8 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     
     func updateSearchResults() {
                     NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { teams in
-                        self.projectTeams = team
-                        projectTeams[IndexPath.row].socialMedias = teams
+                        self.projectTeams = teams
+//                        projectTeams[indexPath.row].socialMedias
                         DispatchQueue.main.async {
                             self.myTableView.reloadData()
                             print("request successful")
