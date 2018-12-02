@@ -18,6 +18,9 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     let projectTeamIdentifier = "ProjectTeam"
     var projectTeams: [ProjectTeam] = []   // fix this !!!
     var socialMedias: [SocialMedia] = []
+    var summary: [EngineeringTeam] = []
+    var accomplishments: [Accomplishments] = []
+    var timeline: [Events] = []
     
     
     private let myArray: NSArray =
@@ -35,11 +38,11 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
 //        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
 //        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 //        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-//        
+//
 //        // Set up tableview logic
 //        tableView.dataSource = self
 //        tableView.register(TeamInfoTableViewCell.self, forCellReuseIdentifier: projectTeamIdentifier)
-//        
+//
 //        // Make tableview cells' height dynamically resize
 //        tableView.estimatedRowHeight = 100
 //        tableView.rowHeight = UITableView.automaticDimension
@@ -177,26 +180,39 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     
     func updateSearchResults() {
         print("trying cuair")
-                    NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { teams in
-                        self.socialMedias = teams
-                        ("print getting cuair...")
-//                        projectTeams[indexPath.row].socialMedias
-                        DispatchQueue.main.async {
-                            self.myTableView.reloadData()
-                            print("request successful")
-                        }
-                    })
-                // else:
-                //self.projectTeams = []
-                //self.myTableView.reloadData()
+        NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { socialM in
+            print("print getting cuair...")
+            self.socialMedias = socialM
+            DispatchQueue.main.async {
+                self.myTableView.reloadData()
+                print("request successful")
+            }
+        })
+        NetworkManager.getSummary(fromProjectTeams: ["cuair"], { sumM in
+            print("print getting cuair...")
+            self.summary = sumM
+            DispatchQueue.main.async {
+                self.myTableView.reloadData()
+                print("request successful")
+            }
+        })
         
-//        NetworkManager.getSummary(fromProjectTeams: ["cuair"], { teams in
-//            self.projectTeams = teams
-//            DispatchQueue.main.async {
-//                self.myTableView.reloadData()
-//                print("request successful")
-//            }
-//        })
-            print("cuair done")
-        }
-    }
+        NetworkManager.getAccomplishments(fromProjectTeams: ["cuair"], { accM in
+            print("print getting cuair...")
+            self.accomplishments = accM
+            DispatchQueue.main.async {
+                self.myTableView.reloadData()
+                print("request successful")
+            }
+        })
+        
+        NetworkManager.getTimeline(fromProjectTeams: ["cuair"], { timeM in
+            print("print getting cuair...")
+            self.timeline = timeM
+            DispatchQueue.main.async {
+                self.myTableView.reloadData()
+                print("request successful")
+            }
+        })
+}
+}
