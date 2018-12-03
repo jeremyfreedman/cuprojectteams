@@ -8,35 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		351D974321B4C35D0060BD00 /* NewProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974221B4C35D0060BD00 /* NewProjectViewController.swift */; };
-		351D976221B4E7E50060BD00 /* NewProjectViewController10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974421B4E7DB0060BD00 /* NewProjectViewController10.swift */; };
-		351D976321B4E7E50060BD00 /* NewProjectViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974521B4E7DB0060BD00 /* NewProjectViewController3.swift */; };
-		351D976421B4E7E50060BD00 /* NewProjectViewController9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974621B4E7DB0060BD00 /* NewProjectViewController9.swift */; };
-		351D976521B4E7E50060BD00 /* NewProjectViewController27.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974721B4E7DC0060BD00 /* NewProjectViewController27.swift */; };
-		351D976621B4E7E50060BD00 /* NewProjectViewController24.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974821B4E7DC0060BD00 /* NewProjectViewController24.swift */; };
-		351D976721B4E7E50060BD00 /* NewProjectViewController21.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974921B4E7DC0060BD00 /* NewProjectViewController21.swift */; };
-		351D976821B4E7E50060BD00 /* NewProjectViewController14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974A21B4E7DC0060BD00 /* NewProjectViewController14.swift */; };
-		351D976921B4E7E50060BD00 /* NewProjectViewController15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974B21B4E7DD0060BD00 /* NewProjectViewController15.swift */; };
-		351D976A21B4E7E50060BD00 /* NewProjectViewController13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974C21B4E7DD0060BD00 /* NewProjectViewController13.swift */; };
-		351D976B21B4E7E50060BD00 /* NewProjectViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974D21B4E7DD0060BD00 /* NewProjectViewController1.swift */; };
-		351D976C21B4E7E50060BD00 /* NewProjectViewController25.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974E21B4E7DE0060BD00 /* NewProjectViewController25.swift */; };
-		351D976D21B4E7E50060BD00 /* NewProjectViewController11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D974F21B4E7DE0060BD00 /* NewProjectViewController11.swift */; };
-		351D976E21B4E7E50060BD00 /* NewProjectViewController23.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975021B4E7DE0060BD00 /* NewProjectViewController23.swift */; };
-		351D976F21B4E7E50060BD00 /* NewProjectViewController6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975121B4E7DF0060BD00 /* NewProjectViewController6.swift */; };
-		351D977021B4E7E50060BD00 /* NewProjectViewController22.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975221B4E7DF0060BD00 /* NewProjectViewController22.swift */; };
-		351D977121B4E7E50060BD00 /* NewProjectViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975321B4E7DF0060BD00 /* NewProjectViewController2.swift */; };
-		351D977221B4E7E50060BD00 /* NewProjectViewController7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975421B4E7DF0060BD00 /* NewProjectViewController7.swift */; };
-		351D977321B4E7E50060BD00 /* NewProjectViewController17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975521B4E7E00060BD00 /* NewProjectViewController17.swift */; };
-		351D977421B4E7E50060BD00 /* NewProjectViewController20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975621B4E7E00060BD00 /* NewProjectViewController20.swift */; };
-		351D977521B4E7E50060BD00 /* NewProjectViewController16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975721B4E7E10060BD00 /* NewProjectViewController16.swift */; };
-		351D977621B4E7E50060BD00 /* NewProjectViewController12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975821B4E7E10060BD00 /* NewProjectViewController12.swift */; };
-		351D977721B4E7E50060BD00 /* NewProjectViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975921B4E7E20060BD00 /* NewProjectViewController5.swift */; };
-		351D977821B4E7E50060BD00 /* NewProjectViewController18.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975A21B4E7E30060BD00 /* NewProjectViewController18.swift */; };
-		351D977921B4E7E50060BD00 /* NewProjectViewController29.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975B21B4E7E30060BD00 /* NewProjectViewController29.swift */; };
-		351D977B21B4E7E50060BD00 /* NewProjectViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975D21B4E7E40060BD00 /* NewProjectViewController4.swift */; };
-		351D977C21B4E7E50060BD00 /* NewProjectViewController26.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975E21B4E7E40060BD00 /* NewProjectViewController26.swift */; };
-		351D977D21B4E7E50060BD00 /* NewProjectViewController28.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D975F21B4E7E50060BD00 /* NewProjectViewController28.swift */; };
-		351D977E21B4E7E50060BD00 /* NewProjectViewController19.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D976021B4E7E50060BD00 /* NewProjectViewController19.swift */; };
-		351D977F21B4E7E50060BD00 /* NewProjectViewController8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D976121B4E7E50060BD00 /* NewProjectViewController8.swift */; };
 		35483B6E21AF87F800F97AB3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35483B6D21AF87F800F97AB3 /* TabBarController.swift */; };
 		35483B7021AF883E00F97AB3 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35483B6F21AF883E00F97AB3 /* NewViewController.swift */; };
 		35483B7221B02A6900F97AB3 /* TeamInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35483B7121B02A6900F97AB3 /* TeamInfoTableViewCell.swift */; };
@@ -61,35 +32,6 @@
 
 /* Begin PBXFileReference section */
 		351D974221B4C35D0060BD00 /* NewProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectViewController.swift; sourceTree = "<group>"; };
-		351D974421B4E7DB0060BD00 /* NewProjectViewController10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController10.swift; sourceTree = "<group>"; };
-		351D974521B4E7DB0060BD00 /* NewProjectViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController3.swift; sourceTree = "<group>"; };
-		351D974621B4E7DB0060BD00 /* NewProjectViewController9.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController9.swift; sourceTree = "<group>"; };
-		351D974721B4E7DC0060BD00 /* NewProjectViewController27.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController27.swift; sourceTree = "<group>"; };
-		351D974821B4E7DC0060BD00 /* NewProjectViewController24.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController24.swift; sourceTree = "<group>"; };
-		351D974921B4E7DC0060BD00 /* NewProjectViewController21.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController21.swift; sourceTree = "<group>"; };
-		351D974A21B4E7DC0060BD00 /* NewProjectViewController14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController14.swift; sourceTree = "<group>"; };
-		351D974B21B4E7DD0060BD00 /* NewProjectViewController15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController15.swift; sourceTree = "<group>"; };
-		351D974C21B4E7DD0060BD00 /* NewProjectViewController13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController13.swift; sourceTree = "<group>"; };
-		351D974D21B4E7DD0060BD00 /* NewProjectViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController1.swift; sourceTree = "<group>"; };
-		351D974E21B4E7DE0060BD00 /* NewProjectViewController25.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController25.swift; sourceTree = "<group>"; };
-		351D974F21B4E7DE0060BD00 /* NewProjectViewController11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController11.swift; sourceTree = "<group>"; };
-		351D975021B4E7DE0060BD00 /* NewProjectViewController23.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController23.swift; sourceTree = "<group>"; };
-		351D975121B4E7DF0060BD00 /* NewProjectViewController6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController6.swift; sourceTree = "<group>"; };
-		351D975221B4E7DF0060BD00 /* NewProjectViewController22.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController22.swift; sourceTree = "<group>"; };
-		351D975321B4E7DF0060BD00 /* NewProjectViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController2.swift; sourceTree = "<group>"; };
-		351D975421B4E7DF0060BD00 /* NewProjectViewController7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController7.swift; sourceTree = "<group>"; };
-		351D975521B4E7E00060BD00 /* NewProjectViewController17.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController17.swift; sourceTree = "<group>"; };
-		351D975621B4E7E00060BD00 /* NewProjectViewController20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController20.swift; sourceTree = "<group>"; };
-		351D975721B4E7E10060BD00 /* NewProjectViewController16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController16.swift; sourceTree = "<group>"; };
-		351D975821B4E7E10060BD00 /* NewProjectViewController12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController12.swift; sourceTree = "<group>"; };
-		351D975921B4E7E20060BD00 /* NewProjectViewController5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController5.swift; sourceTree = "<group>"; };
-		351D975A21B4E7E30060BD00 /* NewProjectViewController18.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController18.swift; sourceTree = "<group>"; };
-		351D975B21B4E7E30060BD00 /* NewProjectViewController29.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController29.swift; sourceTree = "<group>"; };
-		351D975D21B4E7E40060BD00 /* NewProjectViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController4.swift; sourceTree = "<group>"; };
-		351D975E21B4E7E40060BD00 /* NewProjectViewController26.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController26.swift; sourceTree = "<group>"; };
-		351D975F21B4E7E50060BD00 /* NewProjectViewController28.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController28.swift; sourceTree = "<group>"; };
-		351D976021B4E7E50060BD00 /* NewProjectViewController19.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController19.swift; sourceTree = "<group>"; };
-		351D976121B4E7E50060BD00 /* NewProjectViewController8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController8.swift; sourceTree = "<group>"; };
 		35483B6D21AF87F800F97AB3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		35483B6F21AF883E00F97AB3 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		35483B7121B02A6900F97AB3 /* TeamInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -165,35 +107,6 @@
 				35483B6D21AF87F800F97AB3 /* TabBarController.swift */,
 				351D974221B4C35D0060BD00 /* NewProjectViewController.swift */,
 				35483B6F21AF883E00F97AB3 /* NewViewController.swift */,
-				351D974D21B4E7DD0060BD00 /* NewProjectViewController1.swift */,
-				351D975321B4E7DF0060BD00 /* NewProjectViewController2.swift */,
-				351D974521B4E7DB0060BD00 /* NewProjectViewController3.swift */,
-				351D975D21B4E7E40060BD00 /* NewProjectViewController4.swift */,
-				351D975921B4E7E20060BD00 /* NewProjectViewController5.swift */,
-				351D975121B4E7DF0060BD00 /* NewProjectViewController6.swift */,
-				351D975421B4E7DF0060BD00 /* NewProjectViewController7.swift */,
-				351D976121B4E7E50060BD00 /* NewProjectViewController8.swift */,
-				351D974621B4E7DB0060BD00 /* NewProjectViewController9.swift */,
-				351D974421B4E7DB0060BD00 /* NewProjectViewController10.swift */,
-				351D974F21B4E7DE0060BD00 /* NewProjectViewController11.swift */,
-				351D975821B4E7E10060BD00 /* NewProjectViewController12.swift */,
-				351D974C21B4E7DD0060BD00 /* NewProjectViewController13.swift */,
-				351D974A21B4E7DC0060BD00 /* NewProjectViewController14.swift */,
-				351D974B21B4E7DD0060BD00 /* NewProjectViewController15.swift */,
-				351D975721B4E7E10060BD00 /* NewProjectViewController16.swift */,
-				351D975521B4E7E00060BD00 /* NewProjectViewController17.swift */,
-				351D975A21B4E7E30060BD00 /* NewProjectViewController18.swift */,
-				351D976021B4E7E50060BD00 /* NewProjectViewController19.swift */,
-				351D975621B4E7E00060BD00 /* NewProjectViewController20.swift */,
-				351D974921B4E7DC0060BD00 /* NewProjectViewController21.swift */,
-				351D975221B4E7DF0060BD00 /* NewProjectViewController22.swift */,
-				351D975021B4E7DE0060BD00 /* NewProjectViewController23.swift */,
-				351D974821B4E7DC0060BD00 /* NewProjectViewController24.swift */,
-				351D974E21B4E7DE0060BD00 /* NewProjectViewController25.swift */,
-				351D975E21B4E7E40060BD00 /* NewProjectViewController26.swift */,
-				351D974721B4E7DC0060BD00 /* NewProjectViewController27.swift */,
-				351D975F21B4E7E50060BD00 /* NewProjectViewController28.swift */,
-				351D975B21B4E7E30060BD00 /* NewProjectViewController29.swift */,
 				35A7526021A65D39009F6171 /* Main.storyboard */,
 				35A7526321A65D3A009F6171 /* Assets.xcassets */,
 				35A7526521A65D3A009F6171 /* LaunchScreen.storyboard */,
@@ -342,51 +255,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				351D977821B4E7E50060BD00 /* NewProjectViewController18.swift in Sources */,
-				351D976621B4E7E50060BD00 /* NewProjectViewController24.swift in Sources */,
-				351D977C21B4E7E50060BD00 /* NewProjectViewController26.swift in Sources */,
-				351D977221B4E7E50060BD00 /* NewProjectViewController7.swift in Sources */,
 				35483B6E21AF87F800F97AB3 /* TabBarController.swift in Sources */,
-				351D977B21B4E7E50060BD00 /* NewProjectViewController4.swift in Sources */,
-				351D976A21B4E7E50060BD00 /* NewProjectViewController13.swift in Sources */,
-				351D976F21B4E7E50060BD00 /* NewProjectViewController6.swift in Sources */,
 				35483B7A21B1ECEE00F97AB3 /* TeamImageHeaderView.swift in Sources */,
-				351D976C21B4E7E50060BD00 /* NewProjectViewController25.swift in Sources */,
 				351D974321B4C35D0060BD00 /* NewProjectViewController.swift in Sources */,
-				351D977921B4E7E50060BD00 /* NewProjectViewController29.swift in Sources */,
-				351D976421B4E7E50060BD00 /* NewProjectViewController9.swift in Sources */,
-				351D976921B4E7E50060BD00 /* NewProjectViewController15.swift in Sources */,
-				351D977521B4E7E50060BD00 /* NewProjectViewController16.swift in Sources */,
-				351D977321B4E7E50060BD00 /* NewProjectViewController17.swift in Sources */,
-				351D976321B4E7E50060BD00 /* NewProjectViewController3.swift in Sources */,
-				351D976B21B4E7E50060BD00 /* NewProjectViewController1.swift in Sources */,
-				351D977121B4E7E50060BD00 /* NewProjectViewController2.swift in Sources */,
 				35483B8321B232B400F97AB3 /* NetworkManager.swift in Sources */,
 				35483B7021AF883E00F97AB3 /* NewViewController.swift in Sources */,
-				351D976821B4E7E50060BD00 /* NewProjectViewController14.swift in Sources */,
-				351D977721B4E7E50060BD00 /* NewProjectViewController5.swift in Sources */,
 				35A7526F21A65E44009F6171 /* ProjectTeamViewController.swift in Sources */,
 				35A7525F21A65D39009F6171 /* ViewController.swift in Sources */,
 				35483B8621B2332C00F97AB3 /* Team.swift in Sources */,
-				351D976D21B4E7E50060BD00 /* NewProjectViewController11.swift in Sources */,
-				351D976721B4E7E50060BD00 /* NewProjectViewController21.swift in Sources */,
-				351D976221B4E7E50060BD00 /* NewProjectViewController10.swift in Sources */,
-				351D977F21B4E7E50060BD00 /* NewProjectViewController8.swift in Sources */,
 				35A7525D21A65D39009F6171 /* AppDelegate.swift in Sources */,
-				351D976E21B4E7E50060BD00 /* NewProjectViewController23.swift in Sources */,
-				351D977621B4E7E50060BD00 /* NewProjectViewController12.swift in Sources */,
-				351D977E21B4E7E50060BD00 /* NewProjectViewController19.swift in Sources */,
 				35483B8421B232B400F97AB3 /* ProjectTeam.swift in Sources */,
-				351D977421B4E7E50060BD00 /* NewProjectViewController20.swift in Sources */,
-				351D977D21B4E7E50060BD00 /* NewProjectViewController28.swift in Sources */,
 				35F6B95E21B23BCB0013B804 /* TeamsCollectionViewCell.swift in Sources */,
-				351D976521B4E7E50060BD00 /* NewProjectViewController27.swift in Sources */,
 				3577068421ABBA3A005543A9 /* FilterCollectionViewCell.swift in Sources */,
 				35F6B95F21B23BCB0013B804 /* Extensions.swift in Sources */,
 				3577068821ABBA96005543A9 /* Filter.swift in Sources */,
 				3577068621ABBA75005543A9 /* HeaderView.swift in Sources */,
 				35483B7821B035BB00F97AB3 /* TeamInfoHeaderView.swift in Sources */,
-				351D977021B4E7E50060BD00 /* NewProjectViewController22.swift in Sources */,
 				35483B7221B02A6900F97AB3 /* TeamInfoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
