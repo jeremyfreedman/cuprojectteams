@@ -123,6 +123,10 @@ struct TeamMemberSearchResponse: Codable {
     var results: [TeamMember]
 }
 
-struct SocialMediasSearchResponse: Codable {
-    var results: [SocialMedia]
+//struct SocialMediasSearchResponse: Codable {
+//    var results: [SocialMedia]
+//}
+struct SM: Codable {
+    var results: String
 }
+

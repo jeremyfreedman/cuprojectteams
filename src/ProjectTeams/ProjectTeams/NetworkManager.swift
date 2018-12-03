@@ -37,6 +37,7 @@ class NetworkManager {
                     let json = JSON(data)
                     let desc = json["data"]["description"].string
                     if let unwrappedDESC = desc {
+                        print("description")
                         print(unwrappedDESC)
                     }
                     
@@ -61,6 +62,7 @@ class NetworkManager {
                     let json = JSON(data)
                     let desc = json["data"]["img_url"].string
                     if let unwrappedDESC = desc {
+                        print("image")
                         print(unwrappedDESC)
                     }
                 }
@@ -100,6 +102,8 @@ class NetworkManager {
                     if let unwrappedURL = img_url {
                         tempArr.append(unwrappedURL)
                     }
+                    print("accomplishments")
+                    print(tempArr)
                 }
                 break
             case .failure(_):
@@ -154,7 +158,7 @@ class NetworkManager {
                     if let unwrappedIMG2 = img_url2 {
                         memberArray.append(unwrappedIMG2)
                     }
-                    
+                    print("members")
                     print(memberArray)
                     //didGetProjectTeams(socialMediaArray)
                 }
@@ -202,7 +206,59 @@ class NetworkManager {
                     if let unwrappedMAIL = email {
                         socialMediaArray.append(unwrappedMAIL)
                     }
+                    print("medias")
                     print(socialMediaArray)
+                    //idGetProjectTeams(SocialMediasSearchResponse)
+                }
+                break
+            case .failure(_):
+                NSAssertionHandler()
+                break
+            }
+        }
+    }
+    
+    
+    // TEST
+    static func getSocialMedias2(fromProjectTeams teamname: [String], _ didGetProjectTeams: @escaping ([SM]) -> Void) {
+        let parameters: [String:Any] = [
+            "instagram": "instagram"
+        ]
+        let timelineURL = URL+self.teamname+"/socials/"
+        Alamofire.request(timelineURL, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                if let data = response.result.value{
+                    let json = JSON(data)
+                    let a = json["data"][0]
+                    let facebook = a["facebook"].string
+                    let twitter = a["twitter"].string
+                    let instagram = a["instagram"].string
+                    let website = a["website"].string
+                    let git = a["git"].string
+                    let email = a["email"].string
+                    var socialMediaArray = [String]()
+                    if let unwrappedFB = facebook {
+                        socialMediaArray.append(unwrappedFB)
+                    }
+                    if let unwrappedTW = twitter {
+                        socialMediaArray.append(unwrappedTW)
+                    }
+                    if let unwrappedIG = instagram {
+                        socialMediaArray.append(unwrappedIG)
+                    }
+                    if let unwrappedWEB = website {
+                        socialMediaArray.append(unwrappedWEB)
+                    }
+                    if let unwrappedGIT = git {
+                        socialMediaArray.append(unwrappedGIT)
+                    }
+                    if let unwrappedMAIL = email {
+                        socialMediaArray.append(unwrappedMAIL)
+                    }
+                    print("medias")
+                    print(socialMediaArray)
+                    //idGetProjectTeams(SocialMediasSearchResponse)
                 }
                 break
             case .failure(_):
@@ -232,6 +288,7 @@ class NetworkManager {
                     if let unwrappedDESCRIPTION = description {
                         timelineArray.append(unwrappedDESCRIPTION)
                     }
+                    print("timeline")
                     print(timelineArray)
                     //didGetProjectTeams(socialMediaArray)
                 }

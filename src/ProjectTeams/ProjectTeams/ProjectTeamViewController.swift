@@ -17,10 +17,13 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     let projectTeam = "appdev"
     let projectTeamIdentifier = "ProjectTeam"
     var projectTeams: [ProjectTeam] = []   // fix this !!!
+    var count: [Int] = [1,2,3,4,5,6]
     var socialMedias: [SocialMedia] = []
     var summary: [EngineeringTeam] = []
     var accomplishments: [Accomplishments] = []
     var timeline: [Events] = []
+    var members: [Members] = []
+    var SM: [SM] = []
     
     
     private let myArray: NSArray =
@@ -143,23 +146,29 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     
-    
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: projectTeamIdentifier, for: indexPath)  as! TeamInfoTableViewCell
-        
-        cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text
-//        cell.summaryLabel.text = socialMedias[indexPath.row].success?.description ?? "none"
-        cell.summaryLabel.text = socialMedias[indexPath.row].data[0].facebook
-//        cell.summaryLabel.text = projectTeams[indexPath.row].summary
-        
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: projectTeamIdentifier, for: indexPath) as! TeamInfoTableViewCell
+        cell.summaryLabel.text = SM[ind.results
         return cell
     }
     
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: projectTeamIdentifier, for: indexPath)  as! TeamInfoTableViewCell
+//
+//        cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text
+////        cell.summaryLabel.text = socialMedias[indexPath.row].success?.description ?? "none"
+//        cell.summaryLabel.text = socialMedias[indexPath.row].data[0].facebook
+//        cell.summaryLabel.text = SM[indexPath.row].results
+////        cell.summaryLabel.text = projectTeams[indexPath.row].summary
+////
+//
+//        return cell
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return projectTeams.count
+        //return projectTeams.count
+        return count.count
     }
     
     
@@ -180,14 +189,29 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     
     func updateSearchResults() {
         print("trying cuair")
-        NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { socialM in
+        NetworkManager.getSocialMedias2(fromProjectTeams: ["cuair"], { socialM in
             print("print getting cuair...")
-            self.socialMedias = socialM
+            self.SM = socialM
+            print("SOCIAL MEDIAS")
+            print(self.socialMedias)
             DispatchQueue.main.async {
                 self.myTableView.reloadData()
                 print("request successful")
             }
         })
+        
+        NetworkManager.getSocialMedias(fromProjectTeams: ["cuair"], { socialM in
+            print("print getting cuair...")
+            self.socialMedias = socialM
+            print("SOCIAL MEDIAS")
+            print(self.socialMedias)
+            DispatchQueue.main.async {
+                self.myTableView.reloadData()
+                print("request successful")
+            }
+        })
+        
+        
         NetworkManager.getSummary(fromProjectTeams: ["cuair"], { sumM in
             print("print getting cuair...")
             self.summary = sumM
@@ -214,5 +238,16 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
                 print("request successful")
             }
         })
+        
+        NetworkManager.getMembers(fromProjectTeams: ["cuair"], { mem in
+            print("print getting cuair...")
+            self.members = mem
+            DispatchQueue.main.async {
+                self.myTableView.reloadData()
+                print("request successful")
+            }
+        })
+        
+        print("shit")
 }
 }
