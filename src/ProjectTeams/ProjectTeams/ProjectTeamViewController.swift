@@ -146,25 +146,25 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: projectTeamIdentifier, for: indexPath) as! TeamInfoTableViewCell
-        cell.summaryLabel.text = SM[ind.results
-        return cell
-    }
-    
-    
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: projectTeamIdentifier, for: indexPath)  as! TeamInfoTableViewCell
-//
-//        cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text
-////        cell.summaryLabel.text = socialMedias[indexPath.row].success?.description ?? "none"
-//        cell.summaryLabel.text = socialMedias[indexPath.row].data[0].facebook
+//        let cell = tableView.dequeueReusableCell(withIdentifier: projectTeamIdentifier, for: indexPath) as! TeamInfoTableViewCell
 //        cell.summaryLabel.text = SM[indexPath.row].results
-////        cell.summaryLabel.text = projectTeams[indexPath.row].summary
-////
-//
 //        return cell
 //    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: projectTeamIdentifier, for: indexPath)  as! TeamInfoTableViewCell
+
+        cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text
+//        cell.summaryLabel.text = socialMedias[indexPath.row].success?.description ?? "none"
+        cell.summaryLabel.text = socialMedias[indexPath.row].data[0].facebook
+        cell.summaryLabel.text = SM[indexPath.row].results
+//        cell.summaryLabel.text = projectTeams[indexPath.row].summary
+//
+
+        return cell
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return projectTeams.count
