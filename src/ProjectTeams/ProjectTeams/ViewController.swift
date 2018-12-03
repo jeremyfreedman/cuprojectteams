@@ -424,179 +424,179 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
 
     }
     
-    @objc func handleTap1(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController1()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap2(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController2()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap3(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController3()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap4(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController4()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap5(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController5()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap6(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController6()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap7(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController7()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap8(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController8()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap9(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController9()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap10(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController10()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap11(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController11()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap12(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController12()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap13(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController13()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap14(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController14()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap15(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController15()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap16(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController16()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap17(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController17()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap18(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController18()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap19(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController19()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap20(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController20()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap21(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController21()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap22(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController22()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap23(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController23()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap24(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController24()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap25(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController25()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap26(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController26()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap27(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController27()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap28(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController28()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
-    
-    @objc func handleTap29(sender: UITapGestureRecognizer) {
-        let appDevViewController = NewProjectTeamViewController29()
-        navigationController?.pushViewController(appDevViewController, animated: true)
-        
-    }
+//    @objc func handleTap1(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController1()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap2(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController2()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap3(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController3()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap4(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController4()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap5(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController5()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap6(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController6()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap7(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController7()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap8(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController8()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap9(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController9()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap10(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController10()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap11(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController11()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap12(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController12()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap13(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController13()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap14(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController14()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap15(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController15()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap16(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController16()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap17(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController17()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap18(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController18()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap19(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController19()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap20(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController20()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap21(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController21()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap22(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController22()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap23(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController23()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap24(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController24()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap25(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController25()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap26(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController26()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap27(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController27()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap28(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController28()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
+//    
+//    @objc func handleTap29(sender: UITapGestureRecognizer) {
+//        let appDevViewController = NewProjectTeamViewController29()
+//        navigationController?.pushViewController(appDevViewController, animated: true)
+//        
+//    }
     
     
 }

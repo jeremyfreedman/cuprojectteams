@@ -25,7 +25,7 @@ class NewProjectTeamViewController: UIViewController {
     var members: UILabel!
     var accomplishments: UILabel!
     var timeline: UILabel!
-    var socialMedias: UILabel!
+//    var socialMedias: UILabel!
     var temp = 0
     
     
@@ -71,16 +71,16 @@ class NewProjectTeamViewController: UIViewController {
         updateSearchResults()
         view.addSubview(timeline)
         
-        socialMedias = UILabel()
-        socialMedias.translatesAutoresizingMaskIntoConstraints = false
-        socialMedias.text = ""
-        socialMedias.textAlignment = .center
-        socialMedias.font = .systemFont(ofSize: 16, weight: .bold)
-        socialMedias.textColor = .black
-        socialMedias.lineBreakMode = NSLineBreakMode.byWordWrapping
-        socialMedias.numberOfLines = 0
-        updateSearchResults()
-        view.addSubview(socialMedias)
+//        socialMedias = UILabel()
+//        socialMedias.translatesAutoresizingMaskIntoConstraints = false
+//        socialMedias.text = ""
+//        socialMedias.textAlignment = .center
+//        socialMedias.font = .systemFont(ofSize: 16, weight: .bold)
+//        socialMedias.textColor = .black
+//        socialMedias.lineBreakMode = NSLineBreakMode.byWordWrapping
+//        socialMedias.numberOfLines = 0
+//        updateSearchResults()
+//        view.addSubview(socialMedias)
         
         members = UILabel()
         members.translatesAutoresizingMaskIntoConstraints = false
@@ -124,12 +124,12 @@ class NewProjectTeamViewController: UIViewController {
             ])
         
         // Quantity:
-        NSLayoutConstraint.activate([
-            socialMedias.centerXAnchor.constraint(equalTo: decription.centerXAnchor),
-            socialMedias.topAnchor.constraint(equalTo: timeline.topAnchor, constant: 21),
-            socialMedias.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            socialMedias.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 50)
-            ])
+//        NSLayoutConstraint.activate([
+//            socialMedias.centerXAnchor.constraint(equalTo: decription.centerXAnchor),
+//            socialMedias.topAnchor.constraint(equalTo: timeline.topAnchor, constant: 21),
+//            socialMedias.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            socialMedias.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 50)
+//            ])
         
         // Quantity input
         NSLayoutConstraint.activate([
@@ -347,7 +347,7 @@ class NewProjectTeamViewController: UIViewController {
                     }
                     print("medias")
                     print(socialMediaArray)
-                    self.changeSocialLabel(social: socialMediaArray.joined(separator:","))
+//                    self.changeSocialLabel(social: socialMediaArray.joined(separator:","))
                 }
                 break
             case .failure(_):
@@ -357,10 +357,10 @@ class NewProjectTeamViewController: UIViewController {
         }
     }
     
-    func changeSocialLabel(social: String) {
-        self.socialMedias.text = social
-        self.viewDidLoad()
-    }
+//    func changeSocialLabel(social: String) {
+//        self.socialMedias.text = social
+//        self.viewDidLoad()
+//    }
     
     
     func getMembers(fromProjectTeams teamname: [String], _ didGetProjectTeams: @escaping ([Members]) -> Void) {
@@ -421,7 +421,7 @@ class NewProjectTeamViewController: UIViewController {
     }
     
     func changeMemberLabel(social: String) {
-        self.socialMedias.text = social
+//        self.socialMedias.text = social
         self.viewDidLoad()
     }
     
