@@ -19,7 +19,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class NewProjectTeamViewController: UIViewController {
+class NewProjectTeamViewController9: UIViewController {
     
     var decription: UILabel!
     var members: UILabel!
@@ -30,7 +30,7 @@ class NewProjectTeamViewController: UIViewController {
     
     
     private let URL = "http://35.185.52.186/api/team/"
-    private var teamname = "CU%20Air"
+    private var teamname = "Cornell%20Data%20Science"
     
     
     

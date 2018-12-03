@@ -158,8 +158,8 @@ class ProjectTeamViewController: UIViewController, UITableViewDelegate, UITableV
 
         cell.textLabel?.numberOfLines = 0;  // allow multiple lines of text
 //        cell.summaryLabel.text = socialMedias[indexPath.row].success?.description ?? "none"
-        cell.summaryLabel.text = socialMedias[indexPath.row].data[0].facebook
-        cell.summaryLabel.text = SM[indexPath.row].results
+//        cell.summaryLabel.text = socialMedias[indexPath.row].data[0].facebook
+//        cell.summaryLabel.text = SM[indexPath.row].results
 //        cell.summaryLabel.text = projectTeams[indexPath.row].summary
 //
 

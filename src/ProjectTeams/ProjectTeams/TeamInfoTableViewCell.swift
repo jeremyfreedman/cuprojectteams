@@ -44,6 +44,7 @@ class TeamInfoTableViewCell: UITableViewCell {
         summaryLabel.numberOfLines = 0 // make label multi-line
         summaryLabel.textColor = UIColor.lightGray
         
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

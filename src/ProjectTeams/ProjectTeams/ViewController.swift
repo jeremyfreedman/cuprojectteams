@@ -21,7 +21,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     var refreshControl: UIRefreshControl!
     let filterBarHeight: CGFloat = 30
     
-    var vc2 = ProjectTeamViewController()
+    var vc2 = NewProjectTeamViewController()
     let teams = [Team(image: "appdev", name: "Cornell AppDev", type: "type"),
                  Team(image: "aguaclara", name: "AguaClara", type: "type"),
                  Team(image: "bigredbridges", name: "Big Red Bridges", type: "type"),
@@ -95,6 +95,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
         UINavigationBar.appearance().largeTitleTextAttributes =
             [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.tintColor = .white
         
         // tab bar
         view.backgroundColor = UIColor.white
@@ -142,8 +143,8 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         // scrollDirection can be vertical or horizontal
         layout.scrollDirection = .vertical
         collectionView? = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(pulledToRefresh), for: .valueChanged)
+//        refreshControl = UIRefreshControl()
+//        refreshControl.addTarget(self, action: #selector(pulledToRefresh), for: .valueChanged)
         
         collectionView?.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 0.98, alpha: 1.0)
         collectionView?.dataSource = self
@@ -201,6 +202,183 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         cell.team = teams[indexPath.item]
         
         // Handle Tap
+//        if teams[indexPath.item].name ==  "appdev" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap1(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "aguaclara" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap2(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "bigredbridges" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap3(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "acmprogramming" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap4(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "bajasae" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap5(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "chemecar" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap6(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "concretecanoe" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap7(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "cuprobotics" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap8(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "datascience" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap9(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "designtech" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap10(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "engineeringworldhealth" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap11(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "igem" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap12(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "hyperloop" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap13(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "marsrover" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap14(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "microg" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap15(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "racing" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap16(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "rocketry" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap17(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "seismicdesign" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap18(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "cuauv" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap19(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "debut" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap20(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "cuair" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap21(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "autonomousbike" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap22(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "sail" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap23(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "solarboat" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap24(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "designbuildfly" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap25(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "sustainableworld" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap26(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "withoutborders" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap27(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "resistanceracing" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap28(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+//        if teams[indexPath.item].name ==  "steelbridge" {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap29(sender:)))
+//            tap.numberOfTapsRequired = 1
+//            cell.addGestureRecognizer(tap)
+//            return cell
+//        }
+        
+        
+        // give up
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(sender:)))
         tap.numberOfTapsRequired = 1
         cell.addGestureRecognizer(tap)
@@ -241,13 +419,184 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
-        let appDevViewController = ProjectTeamViewController()
+        let appDevViewController = NewProjectTeamViewController()
         navigationController?.pushViewController(appDevViewController, animated: true)
+
     }
     
-    //    @objc func handleCellSelected(sender: UITapGestureRecognizer){
-    //        let cell = sender.view as! TeamsCollectionViewCell
-    //        let indexPath = collectionView?.indexPath(for: cell)
-    //    }
+    @objc func handleTap1(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController1()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap2(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController2()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap3(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController3()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap4(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController4()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap5(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController5()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap6(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController6()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap7(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController7()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap8(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController8()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap9(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController9()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap10(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController10()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap11(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController11()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap12(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController12()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap13(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController13()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap14(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController14()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap15(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController15()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap16(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController16()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap17(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController17()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap18(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController18()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap19(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController19()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap20(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController20()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap21(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController21()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap22(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController22()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap23(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController23()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap24(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController24()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap25(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController25()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap26(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController26()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap27(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController27()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap28(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController28()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
+    @objc func handleTap29(sender: UITapGestureRecognizer) {
+        let appDevViewController = NewProjectTeamViewController29()
+        navigationController?.pushViewController(appDevViewController, animated: true)
+        
+    }
+    
     
 }
